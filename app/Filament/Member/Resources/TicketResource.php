@@ -16,6 +16,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
+use Illuminate\Database\Eloquent\Builder;
 
 class TicketResource extends Resource
 {
@@ -101,6 +102,13 @@ class TicketResource extends Resource
         return [
 
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        // Only show documents belonging to the current user
+        return parent::getEloquentQuery()
+            ->where('user_id', auth()->id());
     }
 
     public static function getPages(): array

@@ -70,6 +70,16 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasOne(Company::class, 'user_id');
     }
 
+    public function tickets(): HasMany
+    {
+        return $this->hasMany(Ticket::class, 'user_id');
+    }
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class, 'user_id');
+    }
+
     protected static function booted(): void
     {
         static::created(static function ($user) {
