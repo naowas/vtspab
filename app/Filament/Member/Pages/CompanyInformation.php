@@ -2,6 +2,7 @@
 
 namespace App\Filament\Member\Pages;
 
+use Devfaysal\BangladeshGeocode\Models\District;
 use Filament\Forms\Get;
 use Filament\Pages\Page;
 use App\Models\Company;
@@ -49,25 +50,36 @@ class CompanyInformation extends Page
                                 TextInput::make('membership_number')
                                     ->unique(ignoreRecord: true),
                                 TextInput::make('email')
+                                    ->label('Company Email')
+                                    ->placeholder('admin@autonemo.io')
                                     ->email()
                                     ->required()
                                     ->unique(ignoreRecord: true),
                                 TextInput::make('phone')
                                     ->tel()
+                                    ->required()
+                                    ->placeholder('+8801XXXXXXXXX')
                                     ->unique(ignoreRecord: true),
                                 TextInput::make('fax'),
                                 Select::make('company_type')
+                                    ->required()
                                     ->options([
                                         'private' => 'Private Limited',
                                         'public' => 'Public Limited',
                                         'partnership' => 'Partnership',
                                         'proprietorship' => 'Proprietorship',
                                     ]),
-                                DatePicker::make('establishment_date'),
-                                TextInput::make('website')->url(),
+                                DatePicker::make('establishment_date')
+                                    ->native(false)
+                                    ->required(),
+                                TextInput::make('website')
+                                    ->url()
+                                    ->placeholder('https://autonemogps.com')
+                                    ->required(),
                             ]),
 
                         FileUpload::make('logo')
+                            ->required()
                             ->image()
                             ->label('Company Logo')
                             ->directory('company/logos'),
@@ -82,12 +94,25 @@ class CompanyInformation extends Page
                     ->schema([
                         Grid::make(2)
                             ->schema([
-                                TextInput::make('address'),
-                                TextInput::make('city'),
-                                TextInput::make('district'),
-                                TextInput::make('zip'),
-                                TextInput::make('country')
-                                    ->default('Bangladesh'),
+                                TextInput::make('address')->required(),
+                                Select::make('division')
+                                    ->required()
+                                    ->options([
+                                        'barisal' => 'Barisal',
+                                        'chittagong' => 'Chittagong',
+                                        'dhaka' => 'Dhaka',
+                                        'khulna' => 'Khulna',
+                                        'mymensingh' => 'Mymensingh',
+                                        'rajshahi' => 'Rajshahi',
+                                        'rangpur' => 'Rangpur',
+                                        'sylhet' => 'Sylhet',
+                                    ]),
+                                Select::make('district')
+                                    ->options(District::all()->pluck('name', 'name')->toArray())
+                                    ->required()->native(false),
+                                TextInput::make('city')->required(),
+                                TextInput::make('zip')->required(),
+                                TextInput::make('country')->default('Bangladesh')->hidden(),
                             ]),
                     ]),
 
@@ -165,12 +190,12 @@ class CompanyInformation extends Page
                     ->schema([
                         Grid::make(2)
                             ->schema([
-                                TextInput::make('company_head_name'),
-                                TextInput::make('company_head_designation'),
-                                TextInput::make('company_head_phone'),
+                                TextInput::make('company_head_name')->required(),
+                                TextInput::make('company_head_designation')->required(),
+                                TextInput::make('company_head_phone')->required(),
                                 TextInput::make('company_head_email')
                                     ->email(),
-                                FileUpload::make('company_head_photo')
+                                FileUpload::make('company_head_photo')->image()
                                     ->directory('company/heads'),
                                 TextInput::make('company_head_socials'),
                             ]),

@@ -28,6 +28,7 @@ return new class extends Migration {
             $table->string('address')->nullable();
             $table->string('city')->nullable();
             $table->string('district')->nullable();
+            $table->string('division')->nullable();
             $table->string('zip')->nullable();
             $table->string('country')->default('Bangladesh');
             $table->string('status')->default('active');
