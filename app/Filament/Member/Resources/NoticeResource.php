@@ -50,7 +50,7 @@ class NoticeResource extends Resource
             ])
             ->bulkActions([
 
-            ]);
+            ])->defaultSort('published_at', 'desc');
     }
 
     public static function getRelations(): array
