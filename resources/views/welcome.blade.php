@@ -43,8 +43,8 @@
             <ul>
                 <li><a href="#hero" class="active">Home<br></a></li>
                 <li><a href="#about">Objects</a></li>
-                <li><a href="#services">Benifites</a></li>
-                <li><a href="#portfolio">Members</a></li>
+                <li><a href="#values">Benifites</a></li>
+                <li><a href="#members">Members</a></li>
                 <li><a href="#team">Notice</a></li>
                 <li><a href="blog.html"></a></li>
                 <a class="btn-getstarted flex-md-shrink-0" href="{{url('member')}}">Login/Register</a>
@@ -115,7 +115,7 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Our Values</h2>
-            <p>Benifites for Companies<br></p>
+            <p>Benefits for Companies<br></p>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -317,7 +317,7 @@
 
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <section id="members" class="portfolio section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
