@@ -31,7 +31,7 @@ return new class extends Migration {
             $table->string('division')->nullable();
             $table->string('zip')->nullable();
             $table->string('country')->default('Bangladesh');
-            $table->string('status')->default('active');
+            $table->string('status')->default('pending');
             $table->string('bin_number')->nullable()->unique();
             $table->string('tin_number')->nullable()->unique();
             $table->string('bin_file')->nullable();

@@ -44,7 +44,6 @@ class MemberPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Member/Widgets'), for: 'App\\Filament\\Member\\Widgets')
             ->widgets([
-               CompanyOverview::class,
             ])
             ->middleware([
                 EncryptCookies::class,
