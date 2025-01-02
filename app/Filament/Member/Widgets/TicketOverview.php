@@ -11,8 +11,8 @@ class TicketOverview extends Widget
     public function getViewData(): array
     {
         $tickets = auth()->user()->tickets;
-        $openTickets = $tickets->where('status', 'Open')->count();
-        $closedTickets = $tickets->where('status', 'Closed')->count();
+        $openTickets = $tickets->where('status', 'open')->count();
+        $closedTickets = $tickets->where('status', 'closed')->count();
 
         return [
             'tickets' => $tickets,
