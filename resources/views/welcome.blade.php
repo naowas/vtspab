@@ -49,8 +49,8 @@
                 <li><a href="#about">Objects</a></li>
                 <li><a href="#values">Benifites</a></li>
                 <li><a href="#members">Members</a></li>
-                <li><a href="#team">Notice</a></li>
-                <li><a href="blog.html"></a></li>
+{{--                <li><a href="#team">Notice</a></li>--}}
+                <li><a href="#recent-posts">Blog</a></li>
                 <a class="btn-getstarted flex-md-shrink-0" href="{{url('member')}}">Login/Register</a>
             </ul>
         </nav>
@@ -61,7 +61,6 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">
-
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
