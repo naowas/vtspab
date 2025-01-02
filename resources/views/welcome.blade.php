@@ -338,22 +338,17 @@
 {{--                </ul><!-- End Portfolio Filters -->--}}
 
                 <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-                    @for($i = 0 ; $i <= 30 ; $i++)
+                    @foreach($companies as $company)
                         <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
+                                <img src="{{Storage::url($company->logo)}}" class="img-fluid" alt="{{$company->name}}">
                                 <div class="portfolio-info">
-                                    <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                    <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                                    <p>{{$company->name}}</p>
+                                    <a target="_blank" href="{{$company->website}}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
                         </div><!-- End Portfolio Item -->
-
-                    @endfor
-
-
+                    @endforeach
                 </div><!-- End Portfolio Container -->
 
             </div>
