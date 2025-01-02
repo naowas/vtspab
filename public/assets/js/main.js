@@ -116,10 +116,10 @@
   });
 
   /**
-   * Init isotope layout and filters
+   * Init isotope layouts and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+  document.querySelectorAll('.isotope-layouts').forEach(function(isotopeItem) {
+    let layout = isotopeItem.getAttribute('data-layouts') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 

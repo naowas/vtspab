@@ -844,7 +844,7 @@ function Item( element, layout ) {
   }
 
   this.element = element;
-  // parent layout class, i.e. Masonry, Isotope, or Packery
+  // parent layouts class, i.e. Masonry, Isotope, or Packery
   this.layout = layout;
   this.position = {
     x: 0,
@@ -981,7 +981,7 @@ proto._transitionTo = function( x, y ) {
   // save end position
   this.setPosition( x, y );
 
-  // if did not move and not transitioning, just go to layout
+  // if did not move and not transitioning, just go to layouts
   if ( didNotMove && !this.isTransitioning ) {
     this.layoutPosition();
     return;
@@ -1326,7 +1326,7 @@ return Item;
 
 /*!
  * Outlayer v2.1.1
- * the brains and guts of a layout library
+ * the brains and guts of a layouts library
  * MIT license
  */
 
@@ -1482,7 +1482,7 @@ Outlayer.compatOptions = {
 proto._create = function() {
   // get items from children
   this.reloadItems();
-  // elements that affect layout, but are not laid out
+  // elements that affect layouts, but are not laid out
   this.stamps = [];
   this.stamp( this.options.stamp );
   // set container style
@@ -1503,7 +1503,7 @@ proto.reloadItems = function() {
 
 
 /**
- * turn elements into Outlayer.Items to be used in layout
+ * turn elements into Outlayer.Items to be used in layouts
  * @param {Array or NodeList or HTMLElement} elems
  * @returns {Array} items - collection of new Outlayer Items
  */
@@ -1524,7 +1524,7 @@ proto._itemize = function( elems ) {
 };
 
 /**
- * get item elements to be used in layout
+ * get item elements to be used in layouts
  * @param {Array or NodeList or HTMLElement} elems
  * @returns {Array} items - item elements
  */
@@ -1542,7 +1542,7 @@ proto.getItemElements = function() {
   });
 };
 
-// ----- init & layout ----- //
+// ----- init & layouts ----- //
 
 /**
  * lays out all items
@@ -1551,7 +1551,7 @@ proto.layout = function() {
   this._resetLayout();
   this._manageStamps();
 
-  // don't animate first layout
+  // don't animate first layouts
   var layoutInstant = this._getOption('layoutInstant');
   var isInstant = layoutInstant !== undefined ?
     layoutInstant : !this._isLayoutInited;
@@ -1561,11 +1561,11 @@ proto.layout = function() {
   this._isLayoutInited = true;
 };
 
-// _init is alias for layout
+// _init is alias for layouts
 proto._init = proto.layout;
 
 /**
- * logic before any new layout
+ * logic before any new layouts
  */
 proto._resetLayout = function() {
   this.getSize();
@@ -1605,7 +1605,7 @@ proto._getMeasurement = function( measurement, size ) {
 };
 
 /**
- * layout a collection of item elements
+ * layouts a collection of item elements
  * @api public
  */
 proto.layoutItems = function( items, isInstant ) {
@@ -1629,7 +1629,7 @@ proto._getItemsForLayout = function( items ) {
 };
 
 /**
- * layout items
+ * layouts items
  * @param {Array} items
  * @param {Boolean} isInstant
  */
@@ -1656,7 +1656,7 @@ proto._layoutItems = function( items, isInstant ) {
 };
 
 /**
- * get item layout position
+ * get item layouts position
  * @param {Outlayer.Item} item
  * @returns {Object} x and y position
  */
@@ -1669,7 +1669,7 @@ proto._getItemLayoutPosition = function( /* item */ ) {
 
 /**
  * iterate over array and position each item
- * Reason being - separating this logic prevents 'layout invalidation'
+ * Reason being - separating this logic prevents 'layouts invalidation'
  * thx @paul_irish
  * @param {Array} queue
  */
@@ -1709,7 +1709,7 @@ proto._positionItem = function( item, x, y, isInstant, i ) {
 };
 
 /**
- * Any logic you want to do after each layout,
+ * Any logic you want to do after each layouts,
  * i.e. size the container
  */
 proto._postLayout = function() {
@@ -1820,7 +1820,7 @@ proto.dispatchEvent = function( type, event, args ) {
 
 /**
  * keep item in collection, but do not lay it out
- * ignored items do not get skipped in layout
+ * ignored items do not get skipped in layouts
  * @param {Element} elem
  */
 proto.ignore = function( elem ) {
@@ -1831,7 +1831,7 @@ proto.ignore = function( elem ) {
 };
 
 /**
- * return item to layout collection
+ * return item to layouts collection
  * @param {Element} elem
  */
 proto.unignore = function( elem ) {
@@ -1943,7 +1943,7 @@ proto._getElementOffset = function( elem ) {
 proto.handleEvent = utils.handleEvent;
 
 /**
- * Bind layout to window resizing
+ * Bind layouts to window resizing
  */
 proto.bindResize = function() {
   window.addEventListener( 'resize', this );
@@ -1951,7 +1951,7 @@ proto.bindResize = function() {
 };
 
 /**
- * Unbind layout to window resizing
+ * Unbind layouts to window resizing
  */
 proto.unbindResize = function() {
   window.removeEventListener( 'resize', this );
@@ -1975,7 +1975,7 @@ proto.resize = function() {
 };
 
 /**
- * check if layout is needed post layout
+ * check if layouts is needed post layouts
  * @returns Boolean
  */
 proto.needsResizeLayout = function() {
@@ -2011,7 +2011,7 @@ proto.appended = function( elems ) {
   if ( !items.length ) {
     return;
   }
-  // layout and reveal just the new items
+  // layouts and reveal just the new items
   this.layoutItems( items, true );
   this.reveal( items );
 };
@@ -2028,13 +2028,13 @@ proto.prepended = function( elems ) {
   // add items to beginning of collection
   var previousItems = this.items.slice(0);
   this.items = items.concat( previousItems );
-  // start new layout
+  // start new layouts
   this._resetLayout();
   this._manageStamps();
-  // layout new stuff without transition
+  // layouts new stuff without transition
   this.layoutItems( items, true );
   this.reveal( items );
-  // layout previous items
+  // layouts previous items
   this.layoutItems( previousItems );
 };
 
@@ -2187,7 +2187,7 @@ Outlayer.data = function( elem ) {
 // -------------------------- create Outlayer class -------------------------- //
 
 /**
- * create a layout class
+ * create a layouts class
  * @param {String} namespace
  */
 Outlayer.create = function( namespace, options ) {
@@ -2273,7 +2273,7 @@ return Outlayer;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/item',[
+    define( 'isotope-layouts/js/item',[
         'outlayer/outlayer'
       ],
       factory );
@@ -2351,7 +2351,7 @@ return Item;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/layout-mode',[
+    define( 'isotope-layouts/js/layouts-mode',[
         'get-size/get-size',
         'outlayer/outlayer'
       ],
@@ -2374,7 +2374,7 @@ return Item;
 }( window, function factory( getSize, Outlayer ) {
   'use strict';
 
-  // layout mode class
+  // layouts mode class
   function LayoutMode( isotope ) {
     this.isotope = isotope;
     // link properties
@@ -2410,7 +2410,7 @@ return Item;
 
   // -----  ----- //
 
-  // for horizontal layout modes, check vertical size
+  // for horizontal layouts modes, check vertical size
   proto.needsVerticalResizeLayout = function() {
     // don't trigger if size did not change
     var size = getSize( this.isotope.element );
@@ -2502,7 +2502,7 @@ return Item;
 
 /*!
  * Masonry v4.2.1
- * Cascading grid layout library
+ * Cascading grid layouts library
  * https://masonry.desandro.com
  * MIT License
  * by David DeSandro
@@ -2513,7 +2513,7 @@ return Item;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'masonry-layout/masonry',[
+    define( 'masonry-layouts/masonry',[
         'outlayer/outlayer',
         'get-size/get-size'
       ],
@@ -2538,7 +2538,7 @@ return Item;
 
 // -------------------------- masonryDefinition -------------------------- //
 
-  // create an Outlayer layout class
+  // create an Outlayer layouts class
   var Masonry = Outlayer.create('masonry');
   // isFitWidth -> fitWidth
   Masonry.compatOptions.fitWidth = 'isFitWidth';
@@ -2741,7 +2741,7 @@ return Item;
 }));
 
 /*!
- * Masonry layout mode
+ * Masonry layouts mode
  * sub-classes Masonry
  * https://masonry.desandro.com
  */
@@ -2751,16 +2751,16 @@ return Item;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/layout-modes/masonry',[
-        '../layout-mode',
-        'masonry-layout/masonry'
+    define( 'isotope-layouts/js/layouts-modes/masonry',[
+        '../layouts-mode',
+        'masonry-layouts/masonry'
       ],
       factory );
   } else if ( typeof module == 'object' && module.exports ) {
     // CommonJS
     module.exports = factory(
-      require('../layout-mode'),
-      require('masonry-layout')
+      require('../layouts-mode'),
+      require('masonry-layouts')
     );
   } else {
     // browser global
@@ -2775,7 +2775,7 @@ return Item;
 
 // -------------------------- masonryDefinition -------------------------- //
 
-  // create an Outlayer layout class
+  // create an Outlayer layouts class
   var MasonryMode = LayoutMode.create('masonry');
 
   var proto = MasonryMode.prototype;
@@ -2816,7 +2816,7 @@ return Item;
 }));
 
 /**
- * fitRows layout mode
+ * fitRows layouts mode
  */
 
 ( function( window, factory ) {
@@ -2824,14 +2824,14 @@ return Item;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/layout-modes/fit-rows',[
-        '../layout-mode'
+    define( 'isotope-layouts/js/layouts-modes/fit-rows',[
+        '../layouts-mode'
       ],
       factory );
   } else if ( typeof exports == 'object' ) {
     // CommonJS
     module.exports = factory(
-      require('../layout-mode')
+      require('../layouts-mode')
     );
   } else {
     // browser global
@@ -2885,7 +2885,7 @@ return FitRows;
 }));
 
 /**
- * vertical layout mode
+ * vertical layouts mode
  */
 
 ( function( window, factory ) {
@@ -2893,14 +2893,14 @@ return FitRows;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/layout-modes/vertical',[
-        '../layout-mode'
+    define( 'isotope-layouts/js/layouts-modes/vertical',[
+        '../layouts-mode'
       ],
       factory );
   } else if ( typeof module == 'object' && module.exports ) {
     // CommonJS
     module.exports = factory(
-      require('../layout-mode')
+      require('../layouts-mode')
     );
   } else {
     // browser global
@@ -2959,12 +2959,12 @@ return Vertical;
         'get-size/get-size',
         'desandro-matches-selector/matches-selector',
         'fizzy-ui-utils/utils',
-        'isotope-layout/js/item',
-        'isotope-layout/js/layout-mode',
-        // include default layout modes
-        'isotope-layout/js/layout-modes/masonry',
-        'isotope-layout/js/layout-modes/fit-rows',
-        'isotope-layout/js/layout-modes/vertical'
+        'isotope-layouts/js/item',
+        'isotope-layouts/js/layouts-mode',
+        // include default layouts modes
+        'isotope-layouts/js/layouts-modes/masonry',
+        'isotope-layouts/js/layouts-modes/fit-rows',
+        'isotope-layouts/js/layouts-modes/vertical'
       ],
       function( Outlayer, getSize, matchesSelector, utils, Item, LayoutMode ) {
         return factory( window, Outlayer, getSize, matchesSelector, utils, Item, LayoutMode );
@@ -2977,12 +2977,12 @@ return Vertical;
       require('get-size'),
       require('desandro-matches-selector'),
       require('fizzy-ui-utils'),
-      require('isotope-layout/js/item'),
-      require('isotope-layout/js/layout-mode'),
-      // include default layout modes
-      require('isotope-layout/js/layout-modes/masonry'),
-      require('isotope-layout/js/layout-modes/fit-rows'),
-      require('isotope-layout/js/layout-modes/vertical')
+      require('isotope-layouts/js/item'),
+      require('isotope-layouts/js/layouts-mode'),
+      // include default layouts modes
+      require('isotope-layouts/js/layouts-modes/masonry'),
+      require('isotope-layouts/js/layouts-modes/fit-rows'),
+      require('isotope-layouts/js/layouts-modes/vertical')
     );
   } else {
     // browser global
@@ -3018,7 +3018,7 @@ var trim = String.prototype.trim ?
 
 // -------------------------- isotopeDefinition -------------------------- //
 
-  // create an Outlayer layout class
+  // create an Outlayer layouts class
   var Isotope = Outlayer.create( 'isotope', {
     layoutMode: 'masonry',
     isJQueryFiltering: true,
@@ -3038,13 +3038,13 @@ var trim = String.prototype.trim ?
     // call super
     Outlayer.prototype._create.call( this );
 
-    // create layout modes
+    // create layouts modes
     this.modes = {};
     // start filteredItems with all items
     this.filteredItems = this.items;
     // keep of track of sortBys
     this.sortHistory = [ 'original-order' ];
-    // create from registered layout modes
+    // create from registered layouts modes
     for ( var name in LayoutMode.modes ) {
       this._initLayoutMode( name );
     }
@@ -3069,7 +3069,7 @@ var trim = String.prototype.trim ?
   };
 
 
-  // -------------------------- layout -------------------------- //
+  // -------------------------- layouts -------------------------- //
 
   proto._initLayoutMode = function( name ) {
     var Mode = LayoutMode.modes[ name ];
@@ -3078,13 +3078,13 @@ var trim = String.prototype.trim ?
     var initialOpts = this.options[ name ] || {};
     this.options[ name ] = Mode.options ?
       utils.extend( Mode.options, initialOpts ) : initialOpts;
-    // init layout mode instance
+    // init layouts mode instance
     this.modes[ name ] = new Mode( this );
   };
 
 
   proto.layout = function() {
-    // if first time doing layout, do all magic
+    // if first time doing layouts, do all magic
     if ( !this._isLayoutInited && this._getOption('initLayout') ) {
       this.arrange();
       return;
@@ -3092,11 +3092,11 @@ var trim = String.prototype.trim ?
     this._layout();
   };
 
-  // private method to be used in layout() & magic()
+  // private method to be used in layouts() & magic()
   proto._layout = function() {
-    // don't animate first layout
+    // don't animate first layouts
     var isInstant = this._getIsInstant();
-    // layout flow
+    // layouts flow
     this._resetLayout();
     this._manageStamps();
     this.layoutItems( this.filteredItems, isInstant );
@@ -3105,12 +3105,12 @@ var trim = String.prototype.trim ?
     this._isLayoutInited = true;
   };
 
-  // filter + sort + layout
+  // filter + sort + layouts
   proto.arrange = function( opts ) {
     // set any options pass
     this.option( opts );
     this._getIsInstant();
-    // filter, sort, and layout
+    // filter, sort, and layouts
 
     // filter
     var filtered = this._filter( this.items );
@@ -3136,7 +3136,7 @@ var trim = String.prototype.trim ?
   };
 
   // HACK
-  // Don't animate/transition first layout
+  // Don't animate/transition first layouts
   // Or don't animate/transition other layouts
   proto._getIsInstant = function() {
     var isLayoutInstant = this._getOption('layoutInstant');
@@ -3388,22 +3388,22 @@ var trim = String.prototype.trim ?
 
   // -------------------------- methods -------------------------- //
 
-  // get layout mode
+  // get layouts mode
   proto._mode = function() {
     var layoutMode = this.options.layoutMode;
     var mode = this.modes[ layoutMode ];
     if ( !mode ) {
       // TODO console.error
-      throw new Error( 'No layout mode: ' + layoutMode );
+      throw new Error( 'No layouts mode: ' + layoutMode );
     }
     // HACK sync mode's options
-    // any options set after init for layout mode need to be synced
+    // any options set after init for layouts mode need to be synced
     mode.options = this.options[ layoutMode ];
     return mode;
   };
 
   proto._resetLayout = function() {
-    // trigger original reset layout
+    // trigger original reset layouts
     Outlayer.prototype._resetLayout.call( this );
     this._mode()._resetLayout();
   };
@@ -3432,7 +3432,7 @@ var trim = String.prototype.trim ?
     if ( !items.length ) {
       return;
     }
-    // filter, layout, reveal new items
+    // filter, layouts, reveal new items
     var filteredItems = this._filterRevealAdded( items );
     // add to filteredItems
     this.filteredItems = this.filteredItems.concat( filteredItems );
@@ -3444,12 +3444,12 @@ var trim = String.prototype.trim ?
     if ( !items.length ) {
       return;
     }
-    // start new layout
+    // start new layouts
     this._resetLayout();
     this._manageStamps();
-    // filter, layout, reveal new items
+    // filter, layouts, reveal new items
     var filteredItems = this._filterRevealAdded( items );
-    // layout previous items
+    // layouts previous items
     this.layoutItems( this.filteredItems );
     // add to items and filteredItems
     this.filteredItems = filteredItems.concat( this.filteredItems );
@@ -3461,13 +3461,13 @@ var trim = String.prototype.trim ?
     this.hide( filtered.needHide );
     // reveal all new items
     this.reveal( filtered.matches );
-    // layout new items, no transition
+    // layouts new items, no transition
     this.layoutItems( filtered.matches, true );
     return filtered.matches;
   };
 
   /**
-   * Filter, sort, and layout newly-appended item elements
+   * Filter, sort, and layouts newly-appended item elements
    * @param {Array or NodeList or Element} elems
    */
   proto.insert = function( elems ) {
