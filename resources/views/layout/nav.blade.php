@@ -1,0 +1,17 @@
+<a href="{{url('/')}}" class="logo d-flex align-items-center me-auto">
+    <!-- Uncomment the line below if you also wish to use an image logo -->
+    <img src="{{asset('assets/img/logo.png')}}" alt="">
+    <h1 class="sitename"></h1>
+</a>
+
+<nav id="navmenu" class="navmenu">
+    <ul>
+        <li><a href="#hero" class="active">Home<br></a></li>
+        <li><a href="#about">Objectives</a></li>
+        <li><a href="#values">Benefits</a></li>
+        <li><a href="#members">Members</a></li>
+        {{--                <li><a href="#team">Notice</a></li>--}}
+        <li><a href="#recent-posts">Blog</a></li>
+        <a class="btn-getstarted flex-md-shrink-0" href="{{url('member')}}">Login/Register</a>
+    </ul>
+</nav>
