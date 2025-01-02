@@ -97,7 +97,7 @@
                             </div><!-- End meta top -->
 
                             <div class="content">
-                               {!! $post->content !!}}
+                               {!! $post->content !!}
 
                             </div><!-- End post content -->
 
