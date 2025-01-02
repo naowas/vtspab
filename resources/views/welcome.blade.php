@@ -24,6 +24,9 @@
     <link href="{{asset('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
+    <!-- Include FullCalendar CSS and JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+
     <!-- Main CSS File -->
     <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
 </head>
@@ -314,8 +317,6 @@
     </section><!-- /Alt Features Section -->
 
 
-
-
     <!-- Portfolio Section -->
     <section id="members" class="portfolio section">
 
@@ -357,6 +358,51 @@
 
     </section><!-- /Portfolio Section -->
 
+    <!-- Upcoming Events and Calendar Section -->
+    <section id="events-calendar" class="events-calendar section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Upcoming Events & Calendar</h2>
+        </div>
+        <div class="container">
+            <div class="row g-4" style="min-height: 600px;">
+                <!-- Event List Column -->
+                <div class="col-lg-6">
+                    <div class="event-list h-100 bg-white p-4 shadow-sm">
+                        <ul class="list-group">
+                            @foreach($events as $event)
+                                <li class="list-group-item border-0" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{ Storage::url($event->event_banner) }}" class="img-fluid me-3" alt="{{ $event->title }}" style="width: 50px; height: 50px;">
+                                        <div>
+                                            <h5>{{ $event->title }}</h5>
+                                            <p><strong>Date:</strong> {{ $event->start_date }} - {{ $event->end_date }}</p>
+                                            <p><strong>Location:</strong> {{ $event->location }}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach
+
+                            @if($events->count() == 0)
+                                <li class="list-group-item border-0" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <h5>No Upcoming Events</h5>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            @endif
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- Calendar Column -->
+                <div class="col-lg-6">
+                    <div id="calendar" class="h-100 bg-white p-4 shadow-sm"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Contact Section -->
@@ -546,6 +592,26 @@
 
 <!-- Main JS File -->
 <script src="assets/js/main.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: [
+                    @foreach($events as $event)
+                {
+                    title: '{{ $event->title }}',
+                    start: '{{ $event->start_date }}',
+                    end: '{{ $event->end_date }}',
+                    url: '{{ url('events/' . $event->id) }}'
+                },
+                @endforeach
+            ]
+        });
+        calendar.render();
+    });
+</script>
 
 </body>
 
