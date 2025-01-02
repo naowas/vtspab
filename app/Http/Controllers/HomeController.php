@@ -17,9 +17,17 @@ class HomeController extends Controller
             ->select(['title','description','start_date','end_date','location','max_participants','event_banner'])->get();
 
         $posts = Post::with(['author', 'category'])->published()->take(3)->get();
-
-
-
         return view('welcome', compact('companies', 'events','posts'));
+    }
+
+    public function showBlog($blogID)
+    {
+        $post = Post::with(['author', 'category'])->published()->where('id', $blogID)->first();
+
+        if (!$post) {
+            abort(404);
+        }
+         return view('blog-show', compact('post'));
+
     }
 }
