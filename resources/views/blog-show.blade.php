@@ -129,7 +129,7 @@
 
 <footer id="footer" class="footer">
 
-    <div class="footer-newsletter">
+    <div class="footer-newsletter" style="padding: 0px">
         {{--        <div class="container">--}}
         {{--            <div class="row justify-content-center text-center">--}}
         {{--                <div class="col-lg-6">--}}
@@ -197,9 +197,6 @@
     <div class="container copyright text-center mt-4">
         <p>© <span>Copyright {{\Carbon\Carbon::now()->format('Y')}}</span> <strong class="px-1 sitename">VTSPAB</strong>
             <span>All Rights Reserved</span></p>
-        <div class="credits">
-            Developed by <a href="https://vtspab.org/">Autonemo Limited</a>
-        </div>
     </div>
 
 </footer>

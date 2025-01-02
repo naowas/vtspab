@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Member\Pages\Auth\MemberRegister;
 use App\Filament\Member\Widgets\CompanyOverview;
 use Filament\Http\Middleware\Authenticate;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
@@ -35,7 +36,7 @@ class MemberPanelProvider extends PanelProvider
             ->profile()
             ->brandLogo(fn () => view('filament.member.custom.brand'))
             ->colors([
-                'primary' => Color::Blue,
+                'primary' => '#009247',
             ])
             ->discoverResources(in: app_path('Filament/Member/Resources'), for: 'App\\Filament\\Member\\Resources')
             ->discoverPages(in: app_path('Filament/Member/Pages'), for: 'App\\Filament\\Member\\Pages')
@@ -59,6 +60,7 @@ class MemberPanelProvider extends PanelProvider
             ->plugins([
 //                FilamentShieldPlugin::make(),
             ])
+            ->darkMode(false)
             ->authMiddleware([
                 Authenticate::class,
             ]);
