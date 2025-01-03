@@ -148,11 +148,10 @@ class MemberRegister extends BaseRegister
                     ->required(),
 
                 TextInput::make('company.bin_number')
-                    ->label('BIN Number')
-                    ->required(),
+                    ->label('BIN Number'),
 
-                TextInput::make('company.tin_number')
-                    ->label('TIN Number')
+                TextInput::make('company.membership_number')
+                    ->label('Company BTRC VTS License / Permission No')
                     ->required(),
             ]);
     }
