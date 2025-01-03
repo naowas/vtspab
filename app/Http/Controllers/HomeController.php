@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Event;
+use App\Models\FoundingMember;
 use Illuminate\Http\Request;
 use Stephenjude\FilamentBlog\Models\Post;
 
@@ -29,5 +30,16 @@ class HomeController extends Controller
         }
          return view('blog-show', compact('post'));
 
+    }
+
+    public function member()
+    {
+        $members = FoundingMember::query()
+            ->where('is_active', true)
+            ->orderBy('sorting_order')
+            ->get()
+            ->groupBy('member_type');
+
+        return view('member', compact('members'));
     }
 }

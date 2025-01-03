@@ -6,12 +6,13 @@
 
 <nav id="navmenu" class="navmenu">
     <ul>
-        <li><a href="#hero" class="active">Home<br></a></li>
-        <li><a href="#about">Objectives</a></li>
-        <li><a href="#values">Benefits</a></li>
-        <li><a href="#members">Members</a></li>
-        {{--                <li><a href="#team">Notice</a></li>--}}
-        <li><a href="#recent-posts">Blog</a></li>
+        <li><a href="{{url('/')}}#hero" class="active">Home<br></a></li>
+        <li><a href="{{url('/')}}#about">Objectives</a></li>
+        <li><a href="{{url('/')}}#values">Benefits</a></li>
+        <li><a href="{{url('/')}}#members">Companies</a></li>
+        <li><a href="{{route('member')}}">Members</a></li>
+        <li><a href="{{url('/')}}#recent-posts">Activities</a></li>
         <a class="btn-getstarted flex-md-shrink-0" href="{{url('member')}}">Login/Register</a>
     </ul>
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 </nav>
