@@ -80,14 +80,19 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasMany(Payment::class, 'user_id');
     }
 
+    public function representatives(): HasMany
+    {
+        return $this->hasMany(CompanyRepresentative::class, 'user_id');
+    }
+
     protected static function booted(): void
     {
-        static::created(static function ($user) {
-            $user->company()->create([
-                'name' => $user->name,
-                'email' => $user->email,
-                // Add other fields as necessary
-            ]);
-        });
+//        static::created(static function ($user) {
+//            $user->company()->create([
+//                'name' => $user->name,
+//                'email' => $user->email,
+//                // Add other fields as necessary
+//            ]);
+//        });
     }
 }

@@ -25,6 +25,9 @@ class CompanyRepresentativeResource extends Resource
             ->schema([
                 Forms\Components\Section::make('Basic Information')
                     ->schema([
+                        Forms\Components\Hidden::make('company_id')
+                            ->default(auth()->user()->company->id),
+                        Forms\Components\Hidden::make('user_id')->default(auth()->id()),
                         Forms\Components\TextInput::make('name')
                             ->required()
                             ->maxLength(255),

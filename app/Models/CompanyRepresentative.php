@@ -40,12 +40,12 @@ class CompanyRepresentative extends Model
         return $this->belongsTo(User::class);
     }
 
-    protected static function booted(): void
-    {
-        static::created(static function ($representative) {
-            $representative->company_id = auth()->user()->company->id;
-            $representative->user_id = auth()->id();
-            $representative->save();
-        });
-    }
+//    protected static function booted(): void
+//    {
+//        static::created(static function ($representative) {
+//            $representative->company_id = auth()->user()->company->id;
+//            $representative->user_id = auth()->id();
+//            $representative->save();
+//        });
+//    }
 }

@@ -10,6 +10,7 @@ use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
+use Filament\Pages\Auth\Register;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -30,7 +31,7 @@ class MemberPanelProvider extends PanelProvider
             ->id('member')
             ->path('member')
             ->login()
-            ->registration()
+            ->registration(MemberRegister::class)
             ->passwordReset()
             ->emailVerification()
             ->profile()
