@@ -1,7 +1,5 @@
 @include('layouts.header')
 <style>
-
-
     .section-title {
         padding: 2rem 0;
         text-align: center;
@@ -22,7 +20,7 @@
         transform: translateX(-50%);
         width: 50px;
         height: 3px;
-        background-color: #009247;
+        background-color: #212529;
     }
 
     .card {
@@ -37,7 +35,7 @@
     }
 
     .table thead th {
-        background-color: #009247;
+        background-color: #212529;
         color: white;
         border: none;
         padding: 1rem;
@@ -70,6 +68,7 @@
         text-decoration: none;
         transition: all 0.3s ease;
         display: inline-block;
+        white-space: nowrap; /* Prevent text wrapping */
     }
 
     .btn-read:hover {
