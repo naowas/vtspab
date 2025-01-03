@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BtrcNotice;
 use App\Models\Company;
 use App\Models\Event;
 use App\Models\FoundingMember;
@@ -41,5 +42,14 @@ class HomeController extends Controller
             ->groupBy('member_type');
 
         return view('member', compact('members'));
+    }
+
+    public function btrcNotice()
+    {
+        $notices = BtrcNotice::query()
+            ->orderBy('published_at', 'desc')
+            ->get();
+
+        return view('btrc-notice', compact('notices'));
     }
 }
