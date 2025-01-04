@@ -4,6 +4,7 @@ namespace App\Filament\Member\Pages\Auth;
 
 use App\Models\CompanyRepresentative;
 use App\Models\User;
+use Devfaysal\BangladeshGeocode\Models\District;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\Component;
 use Filament\Forms\Form;
@@ -17,6 +18,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Wizard;
 use Filament\Forms\Components\Wizard\Step;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\HtmlString;
 use Spatie\Permission\Models\Role;
@@ -162,6 +164,7 @@ class MemberRegister extends BaseRegister
             ->schema([
                 FileUpload::make('company.logo')
                     ->image()
+                    ->required()
                     ->imageResizeMode('cover')
                     ->imageCropAspectRatio('16:9')
                     ->directory('company-logos')
@@ -187,8 +190,13 @@ class MemberRegister extends BaseRegister
                     ->label('City')
                     ->required(),
 
-                TextInput::make('company.district')
+                Select::make('company.district')
                     ->label('District')
+                    ->options(
+                        District::query()
+                            ->pluck('name', 'name')
+                            ->toArray()
+                    )
                     ->required(),
 
                 TextInput::make('company.zip')
@@ -201,7 +209,7 @@ class MemberRegister extends BaseRegister
     {
         $data = $this->form->getState();
 
-        \DB::beginTransaction();
+        DB::beginTransaction();
         try {
             $user = User::create([
                 'name' => $data['name'],
@@ -222,7 +230,6 @@ class MemberRegister extends BaseRegister
                 'website' => $data['company']['website'] ?? null,
                 'phone' => $data['company']['phone'],
                 'bin_number' => $data['company']['bin_number'],
-                'tin_number' => $data['company']['tin_number'],
                 'address' => $data['company']['address'],
                 'city' => $data['company']['city'],
                 'district' => $data['company']['district'],
@@ -230,6 +237,7 @@ class MemberRegister extends BaseRegister
                 'logo' => $data['company']['logo'] ?? null,
                 'trade_license' => $data['company']['trade_license'] ?? null,
                 'email' => $user->email,
+                'status' => 'approved',
             ]);
 
             $user->representatives()->create([
@@ -241,15 +249,16 @@ class MemberRegister extends BaseRegister
                 'designation' => $data['representative_designation'],
                 'gender' => $data['representative_gender'],
                 ]);
-            \DB::commit();
+            DB::commit();
 
 
             Filament::auth()->login($user);
         }
         catch (\Exception $e) {
-            \DB::rollBack();
+            DB::rollBack();
             $this->addError('email', $e->getMessage());
         }
+        $this->addError('email', 'Registration failed');
         return app(RegistrationResponse::class);
 
 
