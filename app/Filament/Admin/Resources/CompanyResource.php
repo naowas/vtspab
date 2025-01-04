@@ -5,6 +5,7 @@ namespace App\Filament\Admin\Resources;
 use App\Filament\Admin\Resources\CompanyResource\Pages;
 use App\Filament\Admin\Resources\CompanyResource\RelationManagers;
 use App\Models\Company;
+use Devfaysal\BangladeshGeocode\Models\District;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,6 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CompanyResource extends Resource
@@ -24,81 +26,156 @@ class CompanyResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('user_id')
-                    ->relationship('user', 'name'),
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('description')
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('success_story')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('membership_number')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('company_type')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('phone')
-                    ->tel()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('fax')
-                    ->maxLength(255),
-                Forms\Components\DatePicker::make('establishment_date'),
-                Forms\Components\TextInput::make('logo')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('website')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('other_websites'),
-                Forms\Components\TextInput::make('address')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('city')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('district')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('division')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('zip')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('country')
-                    ->required()
-                    ->maxLength(255)
-                    ->default('Bangladesh'),
-                Forms\Components\TextInput::make('status')
-                    ->required()
-                    ->maxLength(255)
-                    ->default('active'),
-                Forms\Components\TextInput::make('bin_number')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('tin_number')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('bin_file')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('tin_file')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('shareholders'),
-                Forms\Components\Toggle::make('has_trade_license')
-                    ->required(),
-                Forms\Components\TextInput::make('trade_license_info'),
-                Forms\Components\TextInput::make('board_members'),
-                Forms\Components\TextInput::make('company_head_name')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('company_head_designation')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('company_head_phone')
-                    ->tel()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('company_head_email')
-                    ->email()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('company_head_photo')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('company_head_socials')
-                    ->maxLength(255),
+                Forms\Components\Section::make('User Information')
+                    ->schema([
+                        Forms\Components\Grid::make(2)
+                            ->schema([
+                                Forms\Components\TextInput::make('user.name')
+                                    ->label('User Name')
+                                    ->required()
+                                    ->maxLength(255),
+
+                                Forms\Components\TextInput::make('user.email')
+                                    ->label('Email')
+                                    ->email()
+                                    ->required(),
+
+                                Forms\Components\TextInput::make('user.password')
+                                    ->label('Password')
+                                    ->password()
+                                    ->required()
+                                    ->minLength(8),
+                            ]),
+                    ]),
+
+                Forms\Components\Section::make('Company Details')
+                    ->schema([
+                        Forms\Components\Grid::make(2)
+                            ->schema([
+                                Forms\Components\TextInput::make('name')
+                                    ->label('Company Name')
+                                    ->required()
+                                    ->maxLength(255),
+
+                                Forms\Components\TextInput::make('email')
+                                    ->label('Email')
+                                    ->email()
+                                    ->required()
+                                    ->maxLength(255),
+
+                                Forms\Components\TextInput::make('membership_number')
+                                    ->label('Membership Number')
+                                    ->required(),
+
+                                Forms\Components\Select::make('company_type')
+                                    ->label('Company Type')
+                                    ->required()
+                                    ->options([
+                                        'sole_proprietorship' => 'Sole Proprietorship',
+                                        'partnership' => 'Partnership',
+                                        'corporation' => 'Corporation',
+                                        'llc' => 'Limited Liability Company',
+                                        'ltd' => 'Limited Company',
+                                        'other' => 'Other',
+                                    ]),
+
+                                Forms\Components\DatePicker::make('establishment_date')
+                                    ->label('Establishment Date')
+                                    ->required()
+                                    ->maxDate(now()),
+
+                                Forms\Components\TextInput::make('website')
+                                    ->label('Website')
+                                    ->url()
+                                    ->prefix('https://')
+                                    ->placeholder('example.com'),
+
+                                Forms\Components\TextInput::make('phone')
+                                    ->label('Phone Number')
+                                    ->tel()
+                                    ->required(),
+
+                                Forms\Components\TextInput::make('bin_number')
+                                    ->label('BIN Number'),
+                            ]),
+                    ]),
+
+                Forms\Components\Section::make('Company Documents')
+                    ->schema([
+                        Forms\Components\FileUpload::make('logo')
+                            ->image()
+                            ->required()
+                            ->imageResizeMode('cover')
+                            ->imageCropAspectRatio('16:9')
+                            ->directory('company-logos')
+                            ->label('Company Logo'),
+
+                        Forms\Components\FileUpload::make('trade_license')
+                            ->label('Trade License')
+                            ->acceptedFileTypes(['application/pdf'])
+                            ->directory('trade-licenses'),
+                    ]),
+
+                Forms\Components\Section::make('Company Address')
+                    ->schema([
+                        Forms\Components\Grid::make(2)
+                            ->schema([
+                                Forms\Components\TextInput::make('address')
+                                    ->label('Street Address')
+                                    ->required()
+                                    ->columnSpan(2),
+
+                                Forms\Components\TextInput::make('city')
+                                    ->label('City')
+                                    ->required(),
+
+                                Forms\Components\Select::make('district')
+                                    ->label('District')
+                                    ->options(District::query()->pluck('name', 'name')->toArray())
+                                    ->required(),
+
+                                Forms\Components\TextInput::make('zip')
+                                    ->label('ZIP Code')
+                                    ->required(),
+                            ]),
+                    ]),
+
+                Forms\Components\Section::make('Company Representative')
+                    ->schema([
+                        Forms\Components\Grid::make(2)
+                            ->schema([
+                                Forms\Components\TextInput::make('representative.name')
+                                    ->label('Representative Name')
+                                    ->required()
+                                    ->maxLength(255),
+
+                                Forms\Components\Select::make('representative.gender')
+                                    ->label('Gender')
+                                    ->options([
+                                        'male' => 'Male',
+                                        'female' => 'Female',
+                                    ])
+                                    ->required(),
+
+                                Forms\Components\TextInput::make('representative.designation')
+                                    ->label('Designation')
+                                    ->required(),
+
+                                Forms\Components\TextInput::make('representative.phone')
+                                    ->label('Phone')
+                                    ->required(),
+
+                                Forms\Components\TextInput::make('representative.email')
+                                    ->label('Email')
+                                    ->email()
+                                    ->required(),
+                            ]),
+                    ]),
             ]);
     }
+
+
+
 
     public static function table(Table $table): Table
     {
@@ -175,4 +252,5 @@ class CompanyResource extends Resource
             'edit' => Pages\EditCompany::route('/{record}/edit'),
         ];
     }
+
 }

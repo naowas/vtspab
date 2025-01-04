@@ -100,6 +100,7 @@ class MemberRegister extends BaseRegister
                         'partnership' => 'Partnership',
                         'corporation' => 'Corporation',
                         'llc' => 'Limited Liability Company',
+                        'ltd' => 'Limited Company',
                         'other' => 'Other',
                     ]),
 
