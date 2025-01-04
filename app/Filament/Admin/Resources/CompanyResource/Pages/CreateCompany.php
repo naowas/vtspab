@@ -67,6 +67,10 @@ class CreateCompany extends CreateRecord
             DB::rollBack();
             throw $e;
         }
+    }
 
+    protected function getRedirectUrl(): string
+    {
+        return static::getResource()::getUrl('index');
     }
 }

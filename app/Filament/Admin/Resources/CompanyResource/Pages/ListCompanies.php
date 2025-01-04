@@ -16,4 +16,9 @@ class ListCompanies extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return self::getResource()::getUrl('index');
+    }
 }
