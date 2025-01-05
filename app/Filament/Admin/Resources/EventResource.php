@@ -37,6 +37,7 @@ class EventResource extends Resource
                             ->required()
                             ->maxLength(255)->columnSpanFull(),
                         Forms\Components\RichEditor::make('description')
+                            ->required()
                             ->columnSpan('full'),
 
                         Forms\Components\DateTimePicker::make('start_date')
