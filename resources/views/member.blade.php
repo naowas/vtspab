@@ -30,7 +30,8 @@
                             </div>
                             <div class="member-info">
                                 <h4>{{$m->name}}</h4>
-                                <span>{{$m->designation}}, </span> <span>{{$m->company}}</span>
+{{--                                <span>{{$m->designation}}, </span> <span>{{$m->company}}</span>--}}
+                                <span>{{$m->designation}} </span>
 {{--                                <p></p>--}}
                             </div>
                         </div>

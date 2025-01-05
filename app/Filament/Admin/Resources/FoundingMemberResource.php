@@ -46,6 +46,7 @@ class FoundingMemberResource extends Resource
                             ->options([
                                 'Founder Member' => 'Founder Member',
                                 'General Member' => 'General Member',
+                                'Executive Member' => 'Executive Member',
                                 'Life Time Member' => 'Life Time Member',
                                 'Sub Committee Member' => 'Sub Committee Member',
                             ]),
