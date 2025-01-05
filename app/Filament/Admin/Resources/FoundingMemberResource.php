@@ -47,6 +47,7 @@ class FoundingMemberResource extends Resource
                                 'Founder Member' => 'Founder Member',
                                 'General Member' => 'General Member',
                                 'Executive Member' => 'Executive Member',
+                                'Executive Committee (EC) Member' => 'Executive Committee (EC) Members',
                                 'Life Time Member' => 'Life Time Member',
                                 'Sub Committee Member' => 'Sub Committee Member',
                             ]),
