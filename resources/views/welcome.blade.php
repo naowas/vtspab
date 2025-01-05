@@ -1,5 +1,57 @@
 @include('layouts.header')
 
+<style>
+    .portfolio-content {
+        position: relative;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .image-wrapper {
+        width: 100%;
+        height: 200px; /* Fixed height for consistency */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        background: #fff;
+    }
+
+    .image-wrapper img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Maintains aspect ratio */
+        width: auto;
+        height: auto;
+    }
+
+    .portfolio-info {
+        padding: 1rem;
+        text-align: center;
+        background: #f8f9fa;
+        border-top: 1px solid #eee;
+    }
+
+    .portfolio-info p {
+        margin: 0;
+        font-weight: 500;
+    }
+
+    .details-link {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        color: #333;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    .details-link:hover {
+        color: #007bff;
+    }
+</style>
 <main class="main">
 
     <!-- Hero Section -->
@@ -277,47 +329,34 @@
     </section><!-- /Alt Features Section -->
 
 
-    <!-- Portfolio Section -->
     <section id="members" class="portfolio section">
-
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>24 Licensed Companies Together as One.</h2>
             <p>Leading the telemtics industry of Bangladesh for last 15 years.</p>
-        </div><!-- End Section Title -->
+        </div>
 
         <div class="container">
-
             <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-                {{--                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">--}}
-                {{--                    <li data-filter="*" class="filter-active">All</li>--}}
-                {{--                    <li data-filter=".filter-app">App</li>--}}
-                {{--                    <li data-filter=".filter-product">Product</li>--}}
-                {{--                    <li data-filter=".filter-branding">Branding</li>--}}
-                {{--                    <li data-filter=".filter-books">Books</li>--}}
-                {{--                </ul><!-- End Portfolio Filters -->--}}
-
                 <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                     @foreach($companies as $company)
                         <div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
-                                <img src="{{Storage::url($company->logo)}}" class="img-fluid" alt="{{$company->name}}">
+                                <div class="image-wrapper">
+                                    <img src="{{Storage::url($company->logo)}}" class="img-fluid" alt="{{$company->name}}">
+                                </div>
                                 <div class="portfolio-info">
                                     <p>{{$company->name}}</p>
                                     <a target="_blank" href="{{$company->website}}" title="More Details"
                                        class="details-link"><i class="bi bi-link-45deg"></i></a>
                                 </div>
                             </div>
-                        </div><!-- End Portfolio Item -->
+                        </div>
                     @endforeach
-                </div><!-- End Portfolio Container -->
-
+                </div>
             </div>
-
         </div>
-
-    </section><!-- /Portfolio Section -->
+    </section>
 
     <!-- Upcoming Events and Calendar Section -->
     <section id="events-calendar" class="events-calendar section">
