@@ -30,4 +30,13 @@ class FoundingMember extends Model Implements HasMedia
         'member_since' => 'date',
         'sorting_order' => 'integer',
     ];
+
+    public static array $memberTypes = [
+        'Executive Committee (EC) Member' => 'Executive Committee (EC) Members',
+        'Life Time Member' => 'Life Time Member',
+        'Founder Member' => 'Founder Member',
+        'General Member' => 'General Member',
+        'Sub Committee Member' => 'Sub Committee Member',
+        'Executive Member' => 'Executive Member',
+    ];
 }

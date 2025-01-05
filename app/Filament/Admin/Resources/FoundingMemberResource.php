@@ -43,14 +43,7 @@ class FoundingMemberResource extends Resource
 
                         Forms\Components\Select::make('member_type')
                             ->required()
-                            ->options([
-                                'Founder Member' => 'Founder Member',
-                                'General Member' => 'General Member',
-                                'Executive Member' => 'Executive Member',
-                                'Executive Committee (EC) Member' => 'Executive Committee (EC) Members',
-                                'Life Time Member' => 'Life Time Member',
-                                'Sub Committee Member' => 'Sub Committee Member',
-                            ]),
+                            ->options(FoundingMember::$memberTypes),
 
                         SpatieMediaLibraryFileUpload::make('image')
                             ->collection('founding-member-images')

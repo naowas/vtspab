@@ -36,14 +36,7 @@ class HomeController extends Controller
     public function member()
     {
 
-        $sortingOrder = [
-            'Executive Committee (EC) Member' => 'Executive Committee (EC) Members',
-            'Life Time Member' => 'Life Time Member',
-            'Founder Member' => 'Founder Member',
-            'General Member' => 'General Member',
-            'Sub Committee Member' => 'Sub Committee Member',
-            'Executive Member' => 'Executive Member',
-        ];
+        $sortingOrder = FoundingMember::$memberTypes;
 
         $members = FoundingMember::query()
             ->where('is_active', true)
