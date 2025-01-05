@@ -48,6 +48,7 @@ class EventResource extends Resource
                             ->after('start_date'),
 
                         Forms\Components\TextInput::make('location')
+                            ->required()
                             ->maxLength(255),
 
                         Forms\Components\Toggle::make('is_active')
