@@ -25,7 +25,6 @@
                                 @else
                                 <img src="{{asset('assets/img/dft.png')}}" class="img-fluid" alt="">
                                 @endif
-                                <img src="{{$m->getFirstMediaUrl('founding-member-images')}}" class="img-fluid" alt="">
                                 <div class="social">
                                     <a href="{{$m->twitter}}"><i class="bi bi-twitter-x"></i></a>
                                     <a href="{{$m->facebook}}"><i class="bi bi-facebook"></i></a>
