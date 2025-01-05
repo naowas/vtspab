@@ -20,6 +20,11 @@
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                         <div class="team-member">
                             <div class="member-img">
+                                @if($m->getFirstMediaUrl('founding-member-images') !== '')
+                                <img src="{{$m->getFirstMediaUrl('founding-member-images')}}" class="img-fluid" alt="">
+                                @else
+                                <img src="{{asset('assets/img/dft.png')}}" class="img-fluid" alt="">
+                                @endif
                                 <img src="{{$m->getFirstMediaUrl('founding-member-images')}}" class="img-fluid" alt="">
                                 <div class="social">
                                     <a href="{{$m->twitter}}"><i class="bi bi-twitter-x"></i></a>
