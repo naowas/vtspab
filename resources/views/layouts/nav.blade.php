@@ -13,7 +13,7 @@
         <li><a href="{{route('member')}}">Members</a></li>
         <li><a href="{{url('/')}}#recent-posts">Activities</a></li>
         <li><a href="{{route('btrc-notice')}}">BTRC Notice</a></li>
-        <a class="btn-getstarted flex-md-shrink-0" href="{{url('member')}}">Login/Register</a>
+        <a class="btn-getstarted flex-md-shrink-0" href="{{url('member/login')}}">Member Login</a>
     </ul>
     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 </nav>

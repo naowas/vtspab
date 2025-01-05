@@ -63,7 +63,7 @@
                     <p data-aos="fade-up" data-aos-delay="100">All BTRC issued VTS License Holder companies under one
                         common umbrella </p>
                     <div class="d-flex flex-column flex-md-row" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#about" class="btn-get-started">Become a Member <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{url('member/register')}}" class="btn-get-started">Become a Member <i class="bi bi-arrow-right"></i></a>
 
                     </div>
                 </div>
