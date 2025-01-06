@@ -6,7 +6,7 @@
 
         <!-- Section Title -->
         <div class="container section-title aos-init aos-animate text-left" data-aos="fade-up" style="margin-top: 100px">
-            <p>{{$type}}</p>
+            <p>{{Str::plural($type)}}</p>
         </div><!-- End Section Title -->
 
         <div class="container">
