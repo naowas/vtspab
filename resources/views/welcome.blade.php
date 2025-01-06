@@ -164,6 +164,13 @@
         }
     }
 
+    @media (max-width: 768px) {
+        .arrow-diagram {
+            max-width: 50%;
+            margin: 1rem auto;
+        }
+    }
+
 
 </style>
 <main class="main">
@@ -374,7 +381,7 @@
     <!-- Alt Features Section -->
     <section id="alt-features" class="alt-features section">
 
-        <div class="container py-5">
+        <div class="container">
 
             <div class="container section-title" data-aos="fade-up">
                 <p>MONTHLY SUBSCRIPTION COST HEADS<br></p>
@@ -401,8 +408,8 @@
                 </div>
 
                 <!-- Center Column with Arrow Diagram -->
-                <div class="col-md-4">
-                    <img src="{{asset('assets/img/rec.png')}}" alt="Circular Arrow Diagram" class="arrow-diagram">
+                <div class="col-md-4 text-center">
+                    <img src="{{asset('assets/img/rec.png')}}" alt="Circular Arrow Diagram" class="arrow-diagram img-fluid">
                 </div>
 
                 <!-- Right Column -->
