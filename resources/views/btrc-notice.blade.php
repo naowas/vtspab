@@ -106,7 +106,7 @@
                     <tr>
                         <th class="serial-number">#</th>
                         <th>Title</th>
-                        <th class="date-column">Published Date</th>
+                        <th class="date-column">BTRC Published Date</th>
                         <th class="action-column">Action</th>
                     </tr>
                     </thead>

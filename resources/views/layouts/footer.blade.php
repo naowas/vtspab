@@ -55,10 +55,10 @@
                 <h4>Follow Us</h4>
                 <p>All BTRC issued VTS License Holder companies under one common umbrella</p>
                 <div class="social-links d-flex">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+{{--                    <a href=""><i class="bi bi-twitter-x"></i></a>--}}
+                    <a href="https://www.facebook.com/vtspab"><i class="bi bi-facebook"></i></a>
+{{--                    <a href=""><i class="bi bi-instagram"></i></a>--}}
+{{--                    <a href=""><i class="bi bi-linkedin"></i></a>--}}
                 </div>
             </div>
 
@@ -68,6 +68,7 @@
     <div class="container copyright text-center mt-4">
         <p>© <span>Copyright {{\Carbon\Carbon::now()->format('Y')}}</span> <strong class="px-1 sitename">VTSPAB</strong>
             <span>All Rights Reserved</span></p>
+        <p>Website Hosted By: BDCOM Online Ltd.</p>
     </div>
 
 </footer>

@@ -66,4 +66,9 @@ class HomeController extends Controller
 
         return view('btrc-notice', compact('notices'));
     }
+
+    public function btrcLicensed()
+    {
+        return view('btrc-licensed');
+    }
 }

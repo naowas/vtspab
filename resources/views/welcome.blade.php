@@ -51,6 +51,33 @@
     .details-link:hover {
         color: #007bff;
     }
+    .cost-circle {
+        width: 40px;
+        height: 40px;
+        /*border-radius: 50%;*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border: 2px solid;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+
+    .arrow-diagram {
+        max-width: 400px;
+        margin: 2rem auto;
+    }
+
+    .cost-item {
+        margin-bottom: 2rem;
+    }
+
+    .circle-a { border-color: #00a67d; color: #00a67d; }
+    .circle-b { border-color: #9cb70b; color: #9cb70b; }
+    .circle-c { border-color: #0099b0; color: #0099b0; }
+    .circle-d { border-color: #00a67d; color: #00a67d; }
+    .circle-e { border-color: #0099b0; color: #0099b0; }
+    .circle-f { border-color: #0099b0; color: #0099b0; }
 </style>
 <main class="main">
 
@@ -176,7 +203,6 @@
     </section><!-- /Values Section -->
 
 
-    </section><!-- /Stats Section -->
 
     <!-- Features Section -->
     <section id="features" class="features section">
@@ -246,84 +272,80 @@
 
     <!-- Alt Features Section -->
     <section id="alt-features" class="alt-features section">
-        <div class="container section-title" data-aos="fade-up">
 
-            <p>MONTHLY SUBSCRIPTION COST HEAD<br></p>
-        </div><!-- End Section Title -->
+        <div class="container py-5">
 
-        <div class="container">
+            <div class="container section-title" data-aos="fade-up">
+                <p>MONTHLY SUBSCRIPTION COST HEADS<br></p>
+            </div><!-- End Section Title -->
 
-            <div class="row gy-5">
-
-                <div class="col-xl-7 d-flex order-2 order-xl-1" data-aos="fade-up" data-aos-delay="200">
-
-                    <div class="row align-self-center gy-5">
-
-                        <div class="col-md-6 icon-box">
-                            <i class="bi bi-award"></i>
-                            <div>
-                                <h4>Server Cost</h4>
-                                <p>All VTS providers need to maintain high performance servers which creates a huge cost
-                                    overhead each month</p>
-                            </div>
-                        </div><!-- End Feature Item -->
-
-                        <div class="col-md-6 icon-box">
-                            <i class="bi bi-card-checklist"></i>
-                            <div>
-                                <h4>Internet Cost (SIM)</h4>
-                                <p>For each connection, separate internet cost is required. It is recurring cost each
-                                    month.</p>
-                            </div>
-                        </div><!-- End Feature Item -->
-
-                        <div class="col-md-6 icon-box">
-                            <i class="bi bi-dribbble"></i>
-                            <div>
-                                <h4>Software Development & Extension</h4>
-                                <p>The software needs regular health check and preiodic upgrades are required from
-                                    consumer ends. Which creates a significat overhead</p>
-                            </div>
-                        </div><!-- End Feature Item -->
-
-                        <div class="col-md-6 icon-box">
-                            <i class="bi bi-filter-circle"></i>
-                            <div>
-                                <h4>Maps Layer Cost</h4>
-                                <p>All VTS data needs to be poltted on map layer. Since we need to use third party maps,
-                                    there is a cost overhead on this.</p>
-                            </div>
-                        </div><!-- End Feature Item -->
-
-                        <div class="col-md-6 icon-box">
-                            <i class="bi bi-lightning-charge"></i>
-                            <div>
-                                <h4>Installation & Repair</h4>
-                                <p>Each connection requires periodic maintenance. For that a regular team needs to be
-                                    maintained. </p>
-                            </div>
-                        </div><!-- End Feature Item -->
-
-                        <div class="col-md-6 icon-box">
-                            <i class="bi bi-patch-check"></i>
-                            <div>
-                                <h4>Company Overhead</h4>
-                                <p>To run the company there is a cost head which directly contributes to staff salary
-                                    and opex cost.s</p>
-                            </div>
-                        </div><!-- End Feature Item -->
-
+            <div class="row align-items-center">
+                <!-- Left Column -->
+                <div class="col-md-4">
+                    <div class="cost-item d-flex align-items-start gap-3">
+                        <div class="cost-circle circle-a">A</div>
+                        <div>
+                            <h5 class="fw-bold">Server Cost</h5>
+                            <p class="small">All VTS providers need to maintain high performance servers which creates a huge cost overhead each month</p>
+                        </div>
                     </div>
 
+                    <div class="cost-item d-flex align-items-start gap-3">
+                        <div class="cost-circle circle-d">D</div>
+                        <div>
+                            <h5 class="fw-bold">Maps Layer Cost</h5>
+                            <p class="small">All VTS data needs to be plotted on map layer. Since we need to use third party maps, there is a cost overhead on this</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-xl-5 d-flex align-items-center order-1 order-xl-2" data-aos="fade-up"
-                     data-aos-delay="100">
-                    <img src="assets/img/alt-features.png" class="img-fluid" alt="">
+                <!-- Center Column with Arrow Diagram -->
+                <div class="col-md-4">
+                    <img src="{{asset('assets/img/rec.png')}}" alt="Circular Arrow Diagram" class="arrow-diagram">
                 </div>
 
+                <!-- Right Column -->
+                <div class="col-md-4">
+                    <div class="cost-item d-flex align-items-start gap-3">
+                        <div class="cost-circle circle-b">B</div>
+                        <div>
+                            <h5 class="fw-bold">Internet cost (SIM)</h5>
+                            <p class="small">For each connection, separate internet cost is required. It is recurring cost each month</p>
+                        </div>
+                    </div>
+
+                    <div class="cost-item d-flex align-items-start gap-3">
+                        <div class="cost-circle circle-c">C</div>
+                        <div>
+                            <h5 class="fw-bold">Software Development & Extension</h5>
+                            <p class="small">The software needs regular health check and periodic upgrades are required from consumer ends. Which creates a significant overhead</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- Bottom Row -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="cost-item d-flex align-items-start gap-3">
+                        <div class="cost-circle circle-e">E</div>
+                        <div>
+                            <h5 class="fw-bold">Installation & Repair</h5>
+                            <p class="small">Each connection requires periodic maintenance. For that a regular team needs to be maintained.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="cost-item d-flex align-items-start gap-3">
+                        <div class="cost-circle circle-f">F</div>
+                        <div>
+                            <h5 class="fw-bold">Company Overhead</h5>
+                            <p class="small">To run the company there is a cost head which directly contributes to staff salary and opex cost.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section><!-- /Alt Features Section -->
