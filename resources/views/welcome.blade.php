@@ -6,7 +6,7 @@
         background: #fff;
         border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .image-wrapper {
@@ -51,6 +51,7 @@
     .details-link:hover {
         color: #007bff;
     }
+
     .cost-circle {
         width: 40px;
         height: 40px;
@@ -72,12 +73,35 @@
         margin-bottom: 2rem;
     }
 
-    .circle-a { border-color: #00a67d; color: #00a67d; }
-    .circle-b { border-color: #9cb70b; color: #9cb70b; }
-    .circle-c { border-color: #0099b0; color: #0099b0; }
-    .circle-d { border-color: #00a67d; color: #00a67d; }
-    .circle-e { border-color: #0099b0; color: #0099b0; }
-    .circle-f { border-color: #0099b0; color: #0099b0; }
+    .circle-a {
+        border-color: #00a67d;
+        color: #00a67d;
+    }
+
+    .circle-b {
+        border-color: #9cb70b;
+        color: #9cb70b;
+    }
+
+    .circle-c {
+        border-color: #0099b0;
+        color: #0099b0;
+    }
+
+    .circle-d {
+        border-color: #00a67d;
+        color: #00a67d;
+    }
+
+    .circle-e {
+        border-color: #0099b0;
+        color: #0099b0;
+    }
+
+    .circle-f {
+        border-color: #0099b0;
+        color: #0099b0;
+    }
 
     .process-title {
         color: #00a651;
@@ -172,7 +196,6 @@
     }
 
 
-
     .benefits-container {
         position: relative;
         /*min-height: 100vh;*/
@@ -232,10 +255,21 @@
         flex-shrink: 0;
     }
 
-    .number-1 { background-color: #20B2AA; }
-    .number-2 { background-color: #9ACD32; }
-    .number-3 { background-color: #48D1CC; }
-    .number-4 { background-color: #4682B4; }
+    .number-1 {
+        background-color: #20B2AA;
+    }
+
+    .number-2 {
+        background-color: #9ACD32;
+    }
+
+    .number-3 {
+        background-color: #48D1CC;
+    }
+
+    .number-4 {
+        background-color: #4682B4;
+    }
 
     .benefit-content h3 {
         font-size: 1.5rem;
@@ -264,7 +298,6 @@
     }
 
 
-
 </style>
 <main class="main">
 
@@ -277,7 +310,8 @@
                     <p data-aos="fade-up" data-aos-delay="100">All BTRC issued VTS License Holder companies under one
                         common umbrella </p>
                     <div class="d-flex flex-column flex-md-row" data-aos="fade-up" data-aos-delay="200">
-                        <a href="{{url('member/register')}}" class="btn-get-started">Become a Member <i class="bi bi-arrow-right"></i></a>
+                        <a href="{{url('member/register')}}" class="btn-get-started">Become a Member <i
+                                class="bi bi-arrow-right"></i></a>
 
                     </div>
                 </div>
@@ -343,7 +377,9 @@
                             <div class="benefit-number number-1">1</div>
                             <div class="benefit-content">
                                 <h3>Grey Market Reporting</h3>
-                                <p>There are lot of brands in the market who are selling the same device without having any license from BTRC. They are not giving revenue share to BTRC and is making the field uneven for legal license holders</p>
+                                <p>There are lot of brands in the market who are selling the same device without having
+                                    any license from BTRC. They are not giving revenue share to BTRC and is making the
+                                    field uneven for legal license holders</p>
                             </div>
                         </div>
 
@@ -351,7 +387,9 @@
                             <div class="benefit-number number-2">2</div>
                             <div class="benefit-content">
                                 <h3>Policy Advocacy</h3>
-                                <p>From this platform we can work on advocating for policies that can ensure better returns for BTRC & the companies. Also we shall suggest on ensuring smooth documentation process</p>
+                                <p>From this platform we can work on advocating for policies that can ensure better
+                                    returns for BTRC & the companies. Also we shall suggest on ensuring smooth
+                                    documentation process</p>
                             </div>
                         </div>
 
@@ -359,7 +397,9 @@
                             <div class="benefit-number number-3">3</div>
                             <div class="benefit-content">
                                 <h3>Collective Voice</h3>
-                                <p>A lot of time it is important to act as a collective voice in order to protect national interest. This platform will help us gain better visibility and importance in stakeholder engagement</p>
+                                <p>A lot of time it is important to act as a collective voice in order to protect
+                                    national interest. This platform will help us gain better visibility and importance
+                                    in stakeholder engagement</p>
                             </div>
                         </div>
 
@@ -367,7 +407,10 @@
                             <div class="benefit-number number-4">4</div>
                             <div class="benefit-content">
                                 <h3>Resource Sharing & Market Development</h3>
-                                <p>Through this platform new license holding companies will get to know about various processes related to legal framework from other license holder companies. As well as, we shall work together to raise awareness about the service and explore market</p>
+                                <p>Through this platform new license holding companies will get to know about various
+                                    processes related to legal framework from other license holder companies. As well
+                                    as, we shall work together to raise awareness about the service and explore
+                                    market</p>
                             </div>
                         </div>
                     </div>
@@ -377,6 +420,59 @@
 
     </section><!-- /Values Section -->
 
+    <section id="" class="values section">
+        <div class="container section-title" data-aos="fade-up">
+            <p>BENEFITS FOR BTRC<br></p>
+        </div><!-- End Section Title -->
+        <!-- Section Title -->
+        <div class="benefits-container">
+            <div class="curved-image">
+                <img src="{{asset('assets/img/Benifites.png')}}" alt="" style="height: 100% !important; width: 100% !important;">
+            </div>
+
+            <div class="container content-section">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="benefit-item">
+                            <div class="benefit-number number-1">1</div>
+                            <div class="benefit-content">
+                                <h3>Increase In Revenue</h3>
+                                <p>If the grey market operates are held accountable and brought in the legal framework,
+                                    then obviously there would be increase in revenue for BTRC. As well as if the
+                                    policies
+                                    are in favor of doing business then the current license holding companies can even
+                                    scale and give increased revenue share to BTRC</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-number number-2">2</div>
+                            <div class="benefit-content">
+                                <h3>Collective Body</h3>
+                                <p>VTSPAB will act as a collective body. So in any need, if BTRC needs to sit and
+                                    discuss
+                                    with the VTS operators, the association will facilitate and help in every manner. As
+                                    well as if there are any new policies in place which current license holders need to
+                                    follow then VTSPAB can aware them accordingly </p></div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-number number-3">3</div>
+                            <div class="benefit-content">
+                                <h3>Information & Accessibility</h3>
+                                <p>For any requirement related to VTS industry, the association will provide BTRC any
+                                    data and engage with BTRC in ensuring accessibility with any of its member.
+                                    Informally, the association will work closely to ensure that BTRC faces less process
+                                    teaching for the operators </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /Values Section -->
 
 
     <!-- Features Section -->
@@ -419,7 +515,8 @@
                 <div class="col-md-2 col-sm-6 step-container">
                     <div class="step-number">Step 3</div>
                     <div class="step-description">
-                        Sales & Marketing team brings in lead from the market. Customer information are stored properly for future track back
+                        Sales & Marketing team brings in lead from the market. Customer information are stored properly
+                        for future track back
                     </div>
                     <div class="parallelogram">
                         <div class="parallelogram-content">
@@ -432,7 +529,8 @@
                 <div class="col-md-2 col-sm-6 step-container">
                     <div class="step-number">Step 4</div>
                     <div class="step-description">
-                        Operations team takes the data from the marketing team and sends qualified team for device installation
+                        Operations team takes the data from the marketing team and sends qualified team for device
+                        installation
                     </div>
                     <div class="parallelogram">
                         <div class="parallelogram-content">
@@ -445,7 +543,8 @@
                 <div class="col-md-2 col-sm-6 step-container">
                     <div class="step-number">Step 5</div>
                     <div class="step-description">
-                        After installation & handover, company arranges a full pledged customer support to cater to any queries
+                        After installation & handover, company arranges a full pledged customer support to cater to any
+                        queries
                     </div>
                     <div class="parallelogram">
                         <div class="parallelogram-content">
@@ -475,7 +574,8 @@
                         <div class="cost-circle circle-a">A</div>
                         <div>
                             <h5 class="fw-bold">Server Cost</h5>
-                            <p class="small">All VTS providers need to maintain high performance servers which creates a huge cost overhead each month</p>
+                            <p class="small">All VTS providers need to maintain high performance servers which creates a
+                                huge cost overhead each month</p>
                         </div>
                     </div>
 
@@ -483,14 +583,16 @@
                         <div class="cost-circle circle-d">D</div>
                         <div>
                             <h5 class="fw-bold">Maps Layer Cost</h5>
-                            <p class="small">All VTS data needs to be plotted on map layer. Since we need to use third party maps, there is a cost overhead on this</p>
+                            <p class="small">All VTS data needs to be plotted on map layer. Since we need to use third
+                                party maps, there is a cost overhead on this</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Center Column with Arrow Diagram -->
                 <div class="col-md-4 text-center">
-                    <img src="{{asset('assets/img/rec.png')}}" alt="Circular Arrow Diagram" class="arrow-diagram img-fluid">
+                    <img src="{{asset('assets/img/rec.png')}}" alt="Circular Arrow Diagram"
+                         class="arrow-diagram img-fluid">
                 </div>
 
                 <!-- Right Column -->
@@ -499,7 +601,8 @@
                         <div class="cost-circle circle-b">B</div>
                         <div>
                             <h5 class="fw-bold">Internet cost (SIM)</h5>
-                            <p class="small">For each connection, separate internet cost is required. It is recurring cost each month</p>
+                            <p class="small">For each connection, separate internet cost is required. It is recurring
+                                cost each month</p>
                         </div>
                     </div>
 
@@ -507,7 +610,8 @@
                         <div class="cost-circle circle-c">C</div>
                         <div>
                             <h5 class="fw-bold">Software Development & Extension</h5>
-                            <p class="small">The software needs regular health check and periodic upgrades are required from consumer ends. Which creates a significant overhead</p>
+                            <p class="small">The software needs regular health check and periodic upgrades are required
+                                from consumer ends. Which creates a significant overhead</p>
                         </div>
                     </div>
                 </div>
@@ -520,7 +624,8 @@
                         <div class="cost-circle circle-e">E</div>
                         <div>
                             <h5 class="fw-bold">Installation & Repair</h5>
-                            <p class="small">Each connection requires periodic maintenance. For that a regular team needs to be maintained.</p>
+                            <p class="small">Each connection requires periodic maintenance. For that a regular team
+                                needs to be maintained.</p>
                         </div>
                     </div>
                 </div>
@@ -530,7 +635,8 @@
                         <div class="cost-circle circle-f">F</div>
                         <div>
                             <h5 class="fw-bold">Company Overhead</h5>
-                            <p class="small">To run the company there is a cost head which directly contributes to staff salary and opex cost.</p>
+                            <p class="small">To run the company there is a cost head which directly contributes to staff
+                                salary and opex cost.</p>
                         </div>
                     </div>
                 </div>
@@ -554,11 +660,13 @@
                         <div class="col-lg-3 col-md-6 col-6 portfolio-item isotope-item filter-app">
                             <div class="portfolio-content h-100">
                                 <div class="image-wrapper">
-                                    <img src="{{Storage::url($company->logo)}}" class="img-fluid" alt="{{$company->name}}">
+                                    <img src="{{Storage::url($company->logo)}}" class="img-fluid"
+                                         alt="{{$company->name}}">
                                 </div>
                                 <div class="portfolio-info">
                                     <p>{{$company->name}}</p>
-                                    <a target="_blank" href="{{$company->website}}" title="More Details" class="details-link">
+                                    <a target="_blank" href="{{$company->website}}" title="More Details"
+                                       class="details-link">
                                         <i class="bi bi-link-45deg"></i>
                                     </a>
                                 </div>
