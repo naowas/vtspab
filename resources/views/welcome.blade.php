@@ -78,6 +78,93 @@
     .circle-d { border-color: #00a67d; color: #00a67d; }
     .circle-e { border-color: #0099b0; color: #0099b0; }
     .circle-f { border-color: #0099b0; color: #0099b0; }
+
+    .process-title {
+        color: #00a651;
+        font-weight: bold;
+    }
+
+    .step-container {
+        position: relative;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 300px; /* Ensure all containers are the same height */
+    }
+
+    .step-number {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #00a651;
+    }
+
+    .step-description {
+        font-size: 0.9rem;
+        color: #333;
+        text-align: center;
+        height: 80px; /* Fixed height for consistency */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .parallelogram {
+        background-color: #00a651;
+        width: 100%;
+        height: 120px; /* Fixed height for consistency */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .parallelogram-content {
+        color: white;
+        font-weight: 500;
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
+
+    .arrow {
+        position: absolute;
+        right: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 2px;
+        background-color: #666;
+        z-index: 1;
+    }
+
+    .arrow:after {
+        content: '';
+        position: absolute;
+        right: -5px;
+        top: -4px;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #666;
+        border-right: 2px solid #666;
+        transform: rotate(45deg);
+    }
+
+    @media (max-width: 768px) {
+        .step-container {
+            margin-bottom: 40px;
+            text-align: center;
+            height: auto; /* Adjust height for mobile */
+        }
+
+        .arrow {
+            display: none;
+        }
+    }
+
+
 </style>
 <main class="main">
 
@@ -213,58 +300,72 @@
             <p>STANDARD OPERATION PROCESS:VTS<br></p>
         </div><!-- End Section Title -->
 
-        <div class="container">
-
-            <div class="row gy-5">
-
-                <div class="col-xl-6" data-aos="zoom-out" data-aos-delay="100">
-                    <img src="assets/img/features.png" class="img-fluid" alt="">
+        <div class="container-fluid">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-2 col-sm-6 step-container">
+                    <div class="step-number">Step 1</div>
+                    <div class="step-description">
+                        VTS operation starts with license acquisition from BTRC and clearing all necessary paperwork
+                    </div>
+                    <div class="parallelogram">
+                        <div class="parallelogram-content">
+                            LICENSE<br>ACQUISITION
+                        </div>
+                    </div>
+                    <div class="arrow"></div>
                 </div>
 
-                <div class="col-xl-6 d-flex">
-                    <div class="row align-self-center gy-4">
+                <div class="col-md-2 col-sm-6 step-container">
+                    <div class="step-number">Step 2</div>
+                    <div class="step-description">
+                        Secondly devices are brought in stock as per necessary business requirement
+                    </div>
+                    <div class="parallelogram">
+                        <div class="parallelogram-content">
+                            DEVICE<br>ACQUISITION
+                        </div>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
 
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="feature-box d-flex align-items-center">
-                                <i class="bi bi-check"></i>
-                                <h3>License Acquisition</h3>
-                            </div>
-                        </div><!-- End Feature Item -->
+                <div class="col-md-2 col-sm-6 step-container">
+                    <div class="step-number">Step 3</div>
+                    <div class="step-description">
+                        Sales & Marketing team brings in lead from the market. Customer information are stored properly for future track back
+                    </div>
+                    <div class="parallelogram">
+                        <div class="parallelogram-content">
+                            SALES &<br>MARKETING<br>LEAD
+                        </div>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
 
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="feature-box d-flex align-items-center">
-                                <i class="bi bi-check"></i>
-                                <h3>Device Acquisition</h3>
-                            </div>
-                        </div><!-- End Feature Item -->
+                <div class="col-md-2 col-sm-6 step-container">
+                    <div class="step-number">Step 4</div>
+                    <div class="step-description">
+                        Operations team takes the data from the marketing team and sends qualified team for device installation
+                    </div>
+                    <div class="parallelogram">
+                        <div class="parallelogram-content">
+                            INSTALLATION<br>& ONBOARDING
+                        </div>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
 
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="feature-box d-flex align-items-center">
-                                <i class="bi bi-check"></i>
-                                <h3>Sales & Marketing Lead</h3>
-                            </div>
-                        </div><!-- End Feature Item -->
-
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                            <div class="feature-box d-flex align-items-center">
-                                <i class="bi bi-check"></i>
-                                <h3>Installation & Onboarding</h3>
-                            </div>
-                        </div><!-- End Feature Item -->
-
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
-                            <div class="feature-box d-flex align-items-center">
-                                <i class="bi bi-check"></i>
-                                <h3>Customer Support & Service</h3>
-                            </div>
-                        </div><!-- End Feature Item -->
-
-
-                    </div><!-- End Feature Item -->
-
+                <div class="col-md-2 col-sm-6 step-container">
+                    <div class="step-number">Step 5</div>
+                    <div class="step-description">
+                        After installation & handover, company arranges a full pledged customer support to cater to any queries
+                    </div>
+                    <div class="parallelogram">
+                        <div class="parallelogram-content">
+                            CUSTOMER<br>SUPPORT &<br>SERVICE
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
 
 
