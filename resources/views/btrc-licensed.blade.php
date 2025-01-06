@@ -1,10 +1,10 @@
 @include('layouts.header')
 
-<main class="main">
-    <section class="section">
+<main class="main py-4">
+    <section class="section" style="margin-top: 100px">
         <div class="container">
             <div class="section-title">
-                <h2>List of Vehicle Tracking Services (VTS) License</h2>
+                <p>List of Vehicle Tracking Services (VTS) License</p>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -334,6 +334,57 @@
             </div>
         </div>
     </section>
+
+
+    <section class="section" style="margin-top: 100px">
+        <div class="container">
+            <div class="section-title">
+                <p>List of Vehicle Tracking Service Approval</p>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>Name of Licensee</th>
+                        <th>Address of Licensee</th>
+                        <th>License Number</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Grameenphone Ltd.</td>
+                        <td>Celebration Point, Plot#.3 & 5, Road#.113/A, Gulshan-2, Dhaka-1212 <br> Contact: 9882990, <br>Fax: 9882970 <br>e-mail: info@grameenphone.com <br>Web: www.grameenphone.com</td>
+                        <td>BTRC/LL/Vehicle Tracking(01) G.P./2009-1 <br>Dated: 17/06/2009</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Robi Axiata Limted</td>
+                        <td>Robi Corporate Office, 53, Gulshan South Avenue, Gulshan-1, Dhaka-1212.<br> Contact: 9887146-52,<br> Fax: 9885463 <br> e-mail: <br> Web: www.robi.com.bd</td>
+                        <td>BTRC/LL/VTS(26)Robi/2014-20 <br>Dated: 08/07/2014</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Banglalink Digital Communication Ltd.</td>
+                        <td>Tiger’s Den, House# 4 (SW), Bir Uttam Mir Showkat Sarak, Gulshan-1, Dhaka-1212.<br> Contact: 01911304121 <br> e-mail: eric.aas@banglalink.net <br> Web: www.banglalink.net</td>
+                        <td>14.32.0000.702.49.026.19.53 <br>Dated: 11/12/2019</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="margin-top: 30px">
+        <div class="container">
+            <div class="section-title">
+                <p>Source: <a href="https://btrc.portal.gov.bd/sites/default/files/files/btrc.portal.gov.bd/page/930b96b7_8cce_46c7_b307_00b83f3a4a23/2024-01-04-09-10-4c4345fb45991235b0ec62e006a46596.pdf">Click to See Source</a></p>
+                <p>Updated: 04 January 2024</p>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 @include('layouts.footer')
