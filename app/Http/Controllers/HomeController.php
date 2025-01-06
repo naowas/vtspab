@@ -6,6 +6,7 @@ use App\Models\BtrcNotice;
 use App\Models\Company;
 use App\Models\Event;
 use App\Models\FoundingMember;
+use App\Models\PhotoAlbum;
 use Illuminate\Http\Request;
 use Stephenjude\FilamentBlog\Models\Post;
 
@@ -70,5 +71,18 @@ class HomeController extends Controller
     public function btrcLicensed()
     {
         return view('btrc-licensed');
+    }
+
+    public function gallery()
+    {
+        $albums = PhotoAlbum::query()
+            ->with('media') // spite media library
+            ->orderBy('created_at', 'desc')
+            ->get()
+            ->groupBy('album_type');
+
+//        dd($albums);
+
+        return view('gallary', compact('albums'));
     }
 }
