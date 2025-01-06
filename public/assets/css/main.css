@@ -1679,9 +1679,9 @@ section,
   right: -1px;
   bottom: -1px;
   height: 100%;
-  background-color: var(--surface-color);
-  -webkit-mask: url("../img/team-shape.svg") no-repeat center bottom;
-  mask: url("../img/team-shape.svg") no-repeat center bottom;
+  /*background-color: var(--surface-color);*/
+  /*-webkit-mask: url("../img/team-shape.svg") no-repeat center bottom;*/
+  /*mask: url("../img/team-shape.svg") no-repeat center bottom;*/
   -webkit-mask-size: contain;
   mask-size: contain;
   z-index: 1;
