@@ -33,21 +33,29 @@ class HomeController extends Controller
 
     }
 
-    public function member()
+    public function member(Request $request)
     {
 
-        $sortingOrder = FoundingMember::$memberTypes;
+//        $sortingOrder = FoundingMember::$memberTypes;
+//
+//        $members = FoundingMember::query()
+//            ->where('is_active', true)
+//            ->orderBy('sorting_order')
+//            ->get()
+//            ->groupBy('member_type')
+//            ->sortBy(function ($group, $key) use ($sortingOrder) {
+//                return array_search($key, array_keys($sortingOrder));
+//            });
 
         $members = FoundingMember::query()
             ->where('is_active', true)
+            ->where('member_type', $request->member_type)
             ->orderBy('sorting_order')
-            ->get()
-            ->groupBy('member_type')
-            ->sortBy(function ($group, $key) use ($sortingOrder) {
-                return array_search($key, array_keys($sortingOrder));
-            });
+            ->get();
 
-        return view('member', compact('members'));
+        $type = $request->member_type;
+
+        return view('member', compact('members','type'));
     }
 
     public function btrcNotice()

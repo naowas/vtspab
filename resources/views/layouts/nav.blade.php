@@ -10,7 +10,14 @@
         <li><a href="{{url('/')}}#about">Objectives</a></li>
         <li><a href="{{url('/')}}#values">Benefits</a></li>
         <li><a href="{{url('/')}}#members">Companies</a></li>
-        <li><a href="{{route('member')}}">Members</a></li>
+{{--        <li><a href="{{route('member')}}">Members</a></li>--}}
+        <li class="dropdown"><a href="#"><span>Members</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+                @foreach(\App\Models\FoundingMember::$memberTypes as $key=> $type)
+                    <li><a href="{{url('members?member_type='. $key)}}">{{$type}}</a></li>
+                @endforeach
+            </ul>
+        </li>
         <li><a href="{{url('/')}}#recent-posts">Activities</a></li>
         <li><a href="{{route('btrc-notice')}}">BTRC Notice</a></li>
         <a class="btn-getstarted flex-md-shrink-0" href="{{url('member/login')}}">Member Login</a>
