@@ -1,6 +1,6 @@
 <a href="{{url('/')}}" class="logo d-flex align-items-center me-auto">
     <!-- Uncomment the line below if you also wish to use an image logo -->
-    <img src="{{asset('assets/img/logo.png')}}" alt="">
+    <img src="{{asset('assets/img/VTSPAB Logo.png')}}" alt="">
     <h1 class="sitename"></h1>
 </a>
 

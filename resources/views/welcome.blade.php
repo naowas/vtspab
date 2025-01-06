@@ -172,6 +172,99 @@
     }
 
 
+
+    .benefits-container {
+        position: relative;
+        min-height: 100vh;
+        padding: 4rem 0;
+    }
+
+    .curved-image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 75%;
+        width: 50%;
+        clip-path: circle(75% at 75% 50%);
+        z-index: 1;
+    }
+
+    .curved-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .content-section {
+        position: relative;
+        z-index: 2;
+    }
+
+    .main-title {
+        font-size: 4rem;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 3rem;
+    }
+
+    .companies-text {
+        font-size: 2.5rem;
+        font-weight: 800;
+    }
+
+    .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        padding-right: 2rem;
+    }
+
+    .benefit-number {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-right: 1rem;
+        flex-shrink: 0;
+    }
+
+    .number-1 { background-color: #20B2AA; }
+    .number-2 { background-color: #9ACD32; }
+    .number-3 { background-color: #48D1CC; }
+    .number-4 { background-color: #4682B4; }
+
+    .benefit-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .benefit-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        .curved-image {
+            width: 100%;
+            opacity: 0.3;
+        }
+
+        .main-title {
+            font-size: 3rem;
+        }
+
+        .companies-text {
+            font-size: 2rem;
+        }
+    }
+
+
+
 </style>
 <main class="main">
 
@@ -236,62 +329,53 @@
     <section id="values" class="values section">
 
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Our Values</h2>
-            <p>Benefits for Companies<br></p>
-        </div><!-- End Section Title -->
-
-        <div class="container">
-
-            <div class="row gy-2">
-
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card">
-                        <img src="assets/img/values-1.png" class="img-fluid" alt="">
-                        <h3>Grey Market Reporting</h3>
-                        <p>There are lot of brands in the market who are selling the same device without having any
-                            license from BTRC. They are not giving revenue
-                            share to BTRC and is making the field uneven for legal license holders</p>
-                    </div>
-                </div><!-- End Card Item -->
-
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card">
-                        <img src="assets/img/values-2.png" class="img-fluid" alt="">
-                        <h3>Collective Body</h3>
-                        <p>VTSPAB will act as a collective body. So in any need, if BTRC needs to sit and discuss with
-                            the VTS operators, the association will facilitate and help in every manner. As well as if
-                            there are any new policies in place which current license holders need to follow then VTSPAB
-                            can aware them accordingly .</p>
-                    </div>
-                </div><!-- End Card Item -->
-
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card">
-                        <img src="assets/img/values-3.png" class="img-fluid" alt="">
-                        <h3>Collective Voice</h3>
-                        <p>A lot of time it is important to act as a collective voice in order to protect national
-                            interest. This platform will helo us gain better visibility and importance in stakeholder
-                            engagement.</p>
-                    </div>
-                </div><!-- End Card Item -->
-
-                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card">
-                        <img src="assets/img/values-3.png" class="img-fluid" alt="">
-                        <h3>Resource Sharing & Market Development</h3>
-                        <p>Through this platform new license holding companies will get to know about various processes
-                            related to legal framework from other
-                            license holder companies. As well as, we shall work together to raise awareness about the
-                            service and explore market
-
-                        </p>
-                    </div>
-                </div><!-- End Card Item -->
-
-
+        <div class="benefits-container">
+            <div class="curved-image">
+                <img src="{{asset('assets/img/car.jpg')}}" alt="Road view">
             </div>
 
+            <div class="container content-section">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1 class="main-title">
+                            BENEFITS FOR<br>
+                            <span class="companies-text">COMPANIES</span>
+                        </h1>
+
+                        <div class="benefit-item">
+                            <div class="benefit-number number-1">1</div>
+                            <div class="benefit-content">
+                                <h3>Grey Market Reporting</h3>
+                                <p>There are lot of brands in the market who are selling the same device without having any license from BTRC. They are not giving revenue share to BTRC and is making the field uneven for legal license holders</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-number number-2">2</div>
+                            <div class="benefit-content">
+                                <h3>Policy Advocacy</h3>
+                                <p>From this platform we can work on advocating for policies that can ensure better returns for BTRC & the companies. Also we shall suggest on ensuring smooth documentation process</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-number number-3">3</div>
+                            <div class="benefit-content">
+                                <h3>Collective Voice</h3>
+                                <p>A lot of time it is important to act as a collective voice in order to protect national interest. This platform will help us gain better visibility and importance in stakeholder engagement</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-number number-4">4</div>
+                            <div class="benefit-content">
+                                <h3>Resource Sharing & Market Development</h3>
+                                <p>Through this platform new license holding companies will get to know about various processes related to legal framework from other license holder companies. As well as, we shall work together to raise awareness about the service and explore market</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section><!-- /Values Section -->
@@ -319,7 +403,7 @@
                             LICENSE<br>ACQUISITION
                         </div>
                     </div>
-                    <div class="arrow"></div>
+
                 </div>
 
                 <div class="col-md-2 col-sm-6 step-container">
@@ -332,7 +416,7 @@
                             DEVICE<br>ACQUISITION
                         </div>
                     </div>
-                    <div class="arrow"></div>
+
                 </div>
 
                 <div class="col-md-2 col-sm-6 step-container">
@@ -345,7 +429,7 @@
                             SALES &<br>MARKETING<br>LEAD
                         </div>
                     </div>
-                    <div class="arrow"></div>
+
                 </div>
 
                 <div class="col-md-2 col-sm-6 step-container">
@@ -358,7 +442,7 @@
                             INSTALLATION<br>& ONBOARDING
                         </div>
                     </div>
-                    <div class="arrow"></div>
+
                 </div>
 
                 <div class="col-md-2 col-sm-6 step-container">
