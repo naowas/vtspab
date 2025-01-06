@@ -16,6 +16,7 @@
                 @foreach(\App\Models\FoundingMember::$memberTypes as $key=> $type)
                     <li><a href="{{url('members?member_type='. $key)}}">{{$type}}</a></li>
                 @endforeach
+
             </ul>
         </li>
         <li><a href="{{url('/')}}#recent-posts">Activities</a></li>

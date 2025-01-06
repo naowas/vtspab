@@ -175,7 +175,7 @@
 
     .benefits-container {
         position: relative;
-        min-height: 100vh;
+        /*min-height: 100vh;*/
         padding: 4rem 0;
     }
 
@@ -183,7 +183,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        height: 75%;
+        height: 100%;
         width: 50%;
         clip-path: circle(75% at 75% 50%);
         z-index: 1;
@@ -327,7 +327,9 @@
 
     <!-- Values Section -->
     <section id="values" class="values section">
-
+        <div class="container section-title" data-aos="fade-up">
+            <p>BENEFITS FOR COMPANIES<br></p>
+        </div><!-- End Section Title -->
         <!-- Section Title -->
         <div class="benefits-container">
             <div class="curved-image">
@@ -337,11 +339,6 @@
             <div class="container content-section">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h1 class="main-title">
-                            BENEFITS FOR<br>
-                            <span class="companies-text">COMPANIES</span>
-                        </h1>
-
                         <div class="benefit-item">
                             <div class="benefit-number number-1">1</div>
                             <div class="benefit-content">
