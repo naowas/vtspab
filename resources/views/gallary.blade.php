@@ -53,7 +53,7 @@
     <section id="portfolio" class="portfolio section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <p>Activity gallery</p>
+            <p>Activity Gallery</p>
         </div>
 
         <div class="container">

@@ -97,16 +97,16 @@
 <main class="main py-4">
     <div class="container" style="margin-top: 100px">
         <div class="section-title">
-            <h2>BTRC Notices</h2>
+            <p>Published Notices on BTRC Website</p>
         </div>
         <div class="card">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th class="serial-number">#</th>
+                        <th class="serial-number">SL</th>
                         <th>Title</th>
-                        <th class="date-column">BTRC Published Date</th>
+                        <th class="date-column">Last Updated on</th>
                         <th class="action-column">Action</th>
                     </tr>
                     </thead>
