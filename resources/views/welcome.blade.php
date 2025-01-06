@@ -60,7 +60,7 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        border: 2px solid;
+        /*border: 2px solid;*/
         box-sizing: border-box; /* Include padding and border in the element's total width and height */
     }
 
@@ -558,20 +558,25 @@
 
     </section><!-- /Features Section -->
 
-    <!-- Alt Features Section -->
     <section id="alt-features" class="alt-features section">
-
         <div class="container">
-
             <div class="container section-title" data-aos="fade-up">
                 <p>MONTHLY SUBSCRIPTION COST HEADS<br></p>
-            </div><!-- End Section Title -->
+            </div>
+            <!-- End Section Title -->
 
             <div class="row align-items-center">
                 <!-- Left Column -->
                 <div class="col-md-4">
                     <div class="cost-item d-flex align-items-start gap-3">
-                        <div class="cost-circle circle-a">A</div>
+                        <div class="cost-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 2H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16z"/>
+                                <circle cx="6" cy="18" r="2"/>
+                                <circle cx="18" cy="18" r="2"/>
+                                <path d="M6 16h12V6H6v10zm2-8h8v6H8V8z"/>
+                            </svg>
+                        </div>
                         <div>
                             <h5 class="fw-bold">Server Cost</h5>
                             <p class="small">All VTS providers need to maintain high performance servers which creates a
@@ -580,7 +585,11 @@
                     </div>
 
                     <div class="cost-item d-flex align-items-start gap-3">
-                        <div class="cost-circle circle-d">D</div>
+                        <div class="cost-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 11.5l-5-6.36V2h-3v3.08L7 2 2 7l6.45 6.47a4.49 4.49 0 1 0 6.1 0L21 11.5zM8.5 16.5a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0z"/>
+                            </svg>
+                        </div>
                         <div>
                             <h5 class="fw-bold">Maps Layer Cost</h5>
                             <p class="small">All VTS data needs to be plotted on map layer. Since we need to use third
@@ -598,16 +607,24 @@
                 <!-- Right Column -->
                 <div class="col-md-4">
                     <div class="cost-item d-flex align-items-start gap-3">
-                        <div class="cost-circle circle-b">B</div>
+                        <div class="cost-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-1.85 0-3.55-.63-4.91-1.69l12.22-12.22C19.37 8.45 20 10.15 20 12c0 5.52-4.48 10-8 10z"/>
+                            </svg>
+                        </div>
                         <div>
-                            <h5 class="fw-bold">Internet cost (SIM)</h5>
+                            <h5 class="fw-bold">Internet Cost (SIM)</h5>
                             <p class="small">For each connection, separate internet cost is required. It is recurring
                                 cost each month</p>
                         </div>
                     </div>
 
                     <div class="cost-item d-flex align-items-start gap-3">
-                        <div class="cost-circle circle-c">C</div>
+                        <div class="cost-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 2H4C2.9 2 2 2.9 2 4v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4 18H8v-2h8v2zm0-4H8v-2h8v2zm0-4H8V8h8v4z"/>
+                            </svg>
+                        </div>
                         <div>
                             <h5 class="fw-bold">Software Development & Extension</h5>
                             <p class="small">The software needs regular health check and periodic upgrades are required
@@ -621,7 +638,11 @@
             <div class="row mt-4">
                 <div class="col-md-6">
                     <div class="cost-item d-flex align-items-start gap-3">
-                        <div class="cost-circle circle-e">E</div>
+                        <div class="cost-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11.99 4.22L12 2h-2v2.22C7.62 4.63 6 6.54 6 9h12c0-2.46-1.62-4.37-4-4.78zm9.5 13.28l-1.43 1.43c-1.22-1.22-2.86-2.33-4.98-3.11-.3-1.55-1.17-2.98-2.55-4.09-.13-.11-.25-.22-.38-.32V9H9v1.4c-.13.11-.26.22-.38.33-1.38 1.11-2.25 2.54-2.55 4.09-2.12.78-3.76 1.89-4.98 3.11L2.5 17.5c.84-.84 1.95-1.53 3.31-2.08.3-1.55 1.17-2.98 2.55-4.09.11-.1.23-.2.35-.29v-.5h2v.5c.12.09.24.19.35.29 1.38 1.11 2.25 2.54 2.55 4.09 1.36.55 2.47 1.24 3.31 2.08z"/>
+                            </svg>
+                        </div>
                         <div>
                             <h5 class="fw-bold">Installation & Repair</h5>
                             <p class="small">Each connection requires periodic maintenance. For that a regular team
@@ -632,7 +653,11 @@
 
                 <div class="col-md-6">
                     <div class="cost-item d-flex align-items-start gap-3">
-                        <div class="cost-circle circle-f">F</div>
+                        <div class="cost-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
                         <div>
                             <h5 class="fw-bold">Company Overhead</h5>
                             <p class="small">To run the company there is a cost head which directly contributes to staff
@@ -642,8 +667,8 @@
                 </div>
             </div>
         </div>
+    </section>
 
-    </section><!-- /Alt Features Section -->
 
 
     <section id="members" class="portfolio section">
