@@ -85,4 +85,9 @@ class HomeController extends Controller
 
         return view('gallary', compact('albums'));
     }
+
+    public function contactMail(Request $request)
+    {
+        dd($request->all());
+    }
 }
