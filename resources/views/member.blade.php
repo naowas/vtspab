@@ -29,6 +29,7 @@
                             <div class="member-info">
                                 <h4>{{$m->name}}</h4>
                                 <span>{{$m->designation}} </span>
+                                <span>{{$m->company}} </span>
                             </div>
                         </div>
                     </div><!-- End Team Member -->

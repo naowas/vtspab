@@ -332,9 +332,9 @@
                 <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="content">
                         <h1>What is VTSPAB</h1>
-                        <h3>A PROPOSED TRADE BODY FOR VTS LICENSE HOLDER COMPANIES.</h3>
+                        <h3 style="font-weight: 500">A PROPOSED TRADE BODY FOR VTS LICENSE HOLDER COMPANIES</h3>
                         <p>
-                            There are till date 34 BTRC approved & license holder VTS companies in Bangladesh.
+                            There are till date 50 BTRC approved & license holder VTS companies in Bangladesh.
                             To ensure level playing field for all companies and work together in terms of policy
                             advocacy, grey market abolishment and market development together we are proposing to form a
                             trade body named as
@@ -481,7 +481,7 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>From Setup to Support </h2>
-            <p>STANDARD OPERATION PROCESS:VTS<br></p>
+            <p>STANDARD OPERATION PROCESS- Vehicle Tracking Service (VTS)<br></p>
         </div><!-- End Section Title -->
 
         <div class="container-fluid">
@@ -674,8 +674,8 @@
     <section id="members" class="portfolio section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>24 Licensed Companies Together as One.</h2>
-            <p>Leading the telematics industry of Bangladesh for the last 15 years.</p>
+            <h2>30 Licensed Companies Together as One</h2>
+            <p>Leading the Telematics Industry of Bangladesh for the last 15 years</p>
         </div>
 
         <div class="container">
@@ -757,8 +757,8 @@
         <section id="recent-posts" class="recent-posts section">
             <!-- Section Title -->
             <div class="container section-title aos-init aos-animate" data-aos="fade-up">
-                <h2>Recent Activities</h2>
-                <p>Recent posts form our Activities</p>
+                <h2>Recent News</h2>
+                <p>Recent Activities and Industry News </p>
             </div><!-- End Section Title -->
 
             <div class="container">

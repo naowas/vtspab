@@ -4,7 +4,7 @@
     <section class="section" style="margin-top: 100px">
         <div class="container">
             <div class="section-title">
-                <p>List of Vehicle Tracking Services (VTS) License</p>
+                <p>List of Vehicle Tracking Services (VTS) License Approved by Bangladesh Telecommunication Regulatory Commission (BTRC)</p>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -336,7 +336,7 @@
     </section>
 
 
-    <section class="section" style="margin-top: 100px">
+    <section class="section" style="margin">
         <div class="container">
             <div class="section-title">
                 <p>List of Vehicle Tracking Service Approval</p>
@@ -373,18 +373,11 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-    </section>
+            <p>** Source: <a href="https://btrc.portal.gov.bd/sites/default/files/files/btrc.portal.gov.bd/page/930b96b7_8cce_46c7_b307_00b83f3a4a23/2024-01-04-09-10-4c4345fb45991235b0ec62e006a46596.pdf">BTRC Website Link (Last Updated On: 04 January 2024)</a></p>
 
-    <section class="section" style="margin-top: 30px">
-        <div class="container">
-            <div class="section-title">
-                <p>Source: <a href="https://btrc.portal.gov.bd/sites/default/files/files/btrc.portal.gov.bd/page/930b96b7_8cce_46c7_b307_00b83f3a4a23/2024-01-04-09-10-4c4345fb45991235b0ec62e006a46596.pdf">Click to See Source</a></p>
-                <p>Updated: 04 January 2024</p>
-            </div>
         </div>
-    </section>
 
+    </section>
 </main>
 
 @include('layouts.footer')
