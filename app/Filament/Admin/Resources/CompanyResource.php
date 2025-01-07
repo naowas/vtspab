@@ -46,7 +46,8 @@ class CompanyResource extends Resource
                                     ->required()
                                     ->minLength(8),
                             ]),
-                    ]),
+                    ])->visible(fn ($livewire) => $livewire instanceof Pages\CreateCompany)
+                ,
 
                 Forms\Components\Section::make('Company Details')
                     ->schema([
@@ -170,7 +171,8 @@ class CompanyResource extends Resource
                                     ->email()
                                     ->required(),
                             ]),
-                    ]),
+                    ])->visible(fn ($livewire) => $livewire instanceof Pages\CreateCompany),
+
             ]);
     }
 
