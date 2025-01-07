@@ -53,4 +53,10 @@ class MemberDirectory extends Page implements HasTable
             ])
             ->defaultSort('name', 'asc');
     }
+
+    public static function canAccess(): bool
+    {
+        $authUser = auth()->user();
+        return $authUser->company()->first()->status === 'approved';
+    }
 }

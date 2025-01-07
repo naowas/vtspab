@@ -103,4 +103,10 @@ class DocumentResource extends Resource
             'edit' => Pages\EditDocument::route('/{record}/edit'),
         ];
     }
+
+    public static function canAccess(): bool
+    {
+        $authUser = auth()->user();
+        return $authUser->company()->first()->status === 'approved';
+    }
 }
