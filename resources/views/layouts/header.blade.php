@@ -30,6 +30,15 @@
 
     <!-- Main CSS File -->
     <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FBV5SFJR9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-5FBV5SFJR9');
+    </script>
 </head>
 
 <body class="">

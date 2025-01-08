@@ -1,0 +1,23 @@
+# RewriteEngine on
+# RewriteCond %{HTTP_HOST} ^vtspab.org$ [NC,OR]
+# RewriteCond %{HTTP_HOST} ^vtspab.org$
+# RewriteCond %{REQUEST_URI} !public/
+# RewriteRule (.*) /public/$1 [L]
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  #Loading PHP as if is public/ from /
+  RewriteRule ^$ public/index.php [L]
+  #Loading page as if is public/ from /
+  RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+
+  RewriteRule (^\.|/\.) - [F]
+
+  <Files .env>
+     order allow,deny
+     Deny from all
+  </Files>
+
+
+</IfModule>
