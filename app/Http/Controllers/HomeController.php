@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFromSubmitted;
 use App\Models\BtrcNotice;
 use App\Models\Company;
 use App\Models\Event;
 use App\Models\FoundingMember;
 use App\Models\PhotoAlbum;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Stephenjude\FilamentBlog\Models\Post;
 
 class HomeController extends Controller
@@ -88,6 +90,21 @@ class HomeController extends Controller
 
     public function contactMail(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+            'subject' => $request->subject,
+        ];
+
+        Mail::to('info@vtspab.org')->send(new ContactFromSubmitted($data));
+
     }
 }
