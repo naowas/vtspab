@@ -36,6 +36,7 @@
                 <ul>
                     <li><i class="bi bi-chevron-right"></i> <a href="{{url('/')}}">Home</a></li>
                     <li><i class="bi bi-chevron-right"></i> <a href="{{url('btrc-licensed-companies')}}">BTRC Licensed Companies</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="https://www.mygov.bd/services/info?id=BDGS-1532935465">Online Application to BTRC</a></li>
                 </ul>
             </div>
 
