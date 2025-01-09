@@ -27,7 +27,7 @@ class ContactFromSubmitted extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact From Submitted',
+            subject: 'Contact From Submitted By ' . $this->data['name'],
         );
     }
 

@@ -106,5 +106,7 @@ class HomeController extends Controller
 
         Mail::to('info@vtspab.org')->send(new ContactFromSubmitted($data));
 
+        return response()->json(['status' => 'success','message' => 'Mail sent successfully']);
+
     }
 }
