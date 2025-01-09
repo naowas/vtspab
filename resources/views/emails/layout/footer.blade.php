@@ -13,7 +13,7 @@
             <tr>
                 <td align="center" style="padding-bottom: 15px;">
                     <p style="color: #4a4a4a; font-size: 14px; line-height: 1.5; margin: 0;">
-                        <a href="mailto:contact@company.com" style="color: #009247; text-decoration: none; font-weight: 500;">contact@company.com</a>
+                        <a href="mailto:info@vtspab.org" style="color: #009247; text-decoration: none; font-weight: 500;">info@vtspab.org</a>
                     </p>
                 </td>
             </tr>
